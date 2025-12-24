@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameplay Programmer - Indie Game Collective | NEXUS XR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #22d3ee, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Adjusted link for subdirectory -->
+                <div class="flex-shrink-0">
+                    <a href="../index.html" class="font-display font-bold text-xl tracking-wider text-white">NEXUS<span
+                            class="text-cyan-400">XR</span></a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="../index.html"
+                            class="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+
+                        <!-- Portfolio Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="text-cyan-400 flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium focus:outline-none">
+                                Portfolio <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div
+                                class="absolute left-0 mt-2 w-48 bg-slate-800 rounded-md shadow-lg py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto border border-slate-700">
+                                <a href="../work-experience.html"
+                                    class="block px-4 py-2 text-sm text-cyan-400 bg-slate-700/50">Work Experience</a>
+                                <a href="../projects.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Projects</a>
+                                <a href="../hackathons.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Hackathons</a>
+                                <a href="../workshops.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Workshops</a>
+                                <a href="../organizations.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Organizations</a>
+                            </div>
+                        </div>
+
+                        <a href="../index.html#about"
+                            class="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="../index.html#contact"
+                            class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all transform hover:scale-105">Start
+                            Game</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-btn" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-slate-900 border-b border-slate-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="../work-experience.html"
+                    class="text-cyan-400 block px-3 py-2 rounded-md text-base font-medium pl-6">Work Experience</a>
+                <a href="../projects.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Projects</a>
+                <a href="../hackathons.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Hackathons</a>
+                <a href="../workshops.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Workshops</a>
+                <a href="../organizations.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Organizations</a>
+                <a href="../index.html#about"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="../index.html#contact"
+                    class="text-cyan-400 font-bold block px-3 py-2 rounded-md text-base font-medium">Start Game</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-12 relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
+            <i data-lucide="gamepad-2" class="w-96 h-96 text-purple-500"></i>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <a href="../work-experience.html"
+                class="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-6 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Work Experience
+            </a>
+            <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                <div>
+                    <span
+                        class="inline-block px-3 py-1 bg-purple-900/30 border border-purple-500/30 rounded-full text-purple-400 text-sm font-mono mb-4">2022
+                        - 2023</span>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-2">Gameplay Programmer</h1>
+                    <h2 class="text-2xl md:text-3xl text-slate-400 font-display">Indie Game Collective</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+            <!-- Main Details -->
+            <div class="lg:col-span-2 space-y-12">
+
+                <section>
+                    <h3 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                        <i data-lucide="file-text" class="w-6 h-6 text-cyan-500"></i> Overview
+                    </h3>
+                    <div class="prose prose-invert max-w-none text-slate-300 leading-relaxed">
+                        <p>
+                            As a core team member at the Indie Game Collective, I was responsible for architecting and
+                            implementing the primary gameplay loop of "Neon Drift", a physics-based vehicle platformer.
+                        </p>
+                        <p>
+                            I bridged the gap between game design and technical implementation, often creating custom
+                            tools in the Unreal Editor to allow level designers to iterate faster. My role also involved
+                            significant work with C++ to extend the engine's capability for our specific vehicle physics
+                            needs.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                        <i data-lucide="zap" class="w-6 h-6 text-yellow-500"></i> Key Contributions
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4 p-4 bg-slate-800/50 rounded-xl border border-slate-700">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-green-500 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white">Custom Physics Engine Extension</h4>
+                                <p class="text-slate-400 text-sm mt-1">
+                                    Wrote custom C++ movement components to handle non-euclidean gravity surfaces,
+                                    allowing the car to drive on walls and ceilings without camera jitter.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 p-4 bg-slate-800/50 rounded-xl border border-slate-700">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-green-500 flex-shrink-0 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-white">Animation State Machine</h4>
+                                <p class="text-slate-400 text-sm mt-1">
+                                    Designed a complex animation state machine in Unreal, blending procedural Inverse
+                                    Kinematics (IK) with baked animations to make the vehicle suspension react
+                                    realistically to terrain.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Gallery Placeholder -->
+                <section>
+                    <h3 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                        <i data-lucide="image" class="w-6 h-6 text-purple-500"></i> Gallery
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div
+                            class="aspect-video bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
+                            <span class="text-slate-500 text-sm flex flex-col items-center gap-2"><i data-lucide="image"
+                                    class="w-8 h-8"></i> Gameplay Clip 1</span>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="space-y-8">
+
+                <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                    <h3 class="text-xl font-bold mb-4 text-white">Tech Stack</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-slate-900 text-slate-300 text-sm rounded-full border border-slate-700">Unreal
+                            Engine 5</span>
+                        <span
+                            class="px-3 py-1 bg-slate-900 text-slate-300 text-sm rounded-full border border-slate-700">C++</span>
+                        <span
+                            class="px-3 py-1 bg-slate-900 text-slate-300 text-sm rounded-full border border-slate-700">Blueprints</span>
+                        <span
+                            class="px-3 py-1 bg-slate-900 text-slate-300 text-sm rounded-full border border-slate-700">Perforce</span>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-2xl p-6 border border-purple-500/20">
+                    <h3 class="text-xl font-bold mb-4 text-white">Project Stats</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between">
+                            <span class="text-slate-400">Team Size</span>
+                            <span class="text-white font-mono">5 Members</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-slate-400">Platform</span>
+                            <span class="text-white font-mono">PC (Steam)</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="text-slate-400">Status</span>
+                            <span class="text-yellow-400 font-mono">Shipped</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-slate-600 text-sm border-t border-slate-800 mt-12">
+        <p>© 2025 NEXUS XR. Built with ModelViewer & Tailwind.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

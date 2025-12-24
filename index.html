@@ -233,93 +233,97 @@
         </div>
     </section>
 
-    <!-- Featured Work -->
+    <!-- Portfolio Categories -->
     <section id="work" class="py-24 bg-slate-900/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Deployed Projects</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Selected works in Game Dev, VR, and Interactive 3D.</p>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Portfolio</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Explore my journey through industry experience, creative
+                    projects, and community involvement.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Project 1: NPC/Character -->
-                <div
-                    class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal">
-                    <div class="h-card-3d bg-gradient-to-br from-slate-700 to-slate-800 relative">
+                <!-- 1. Work Experience -->
+                <a href="work-experience.html"
+                    class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal">
+                    <div
+                        class="h-48 bg-gradient-to-br from-slate-700 to-slate-800 relative flex items-center justify-center">
+                        <i data-lucide="briefcase"
+                            class="w-20 h-20 text-cyan-500 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div
+                            class="absolute inset-0 bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Work Experience
+                        </h3>
+                        <p class="text-slate-400 text-sm">Professional roles in XR development and software engineering.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- 2. Personal Projects -->
+                <a href="projects.html"
+                    class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-100">
+                    <div class="h-48 bg-slate-900 relative">
                         <model-viewer src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" alt="Robot"
                             animation-name="Running" autoplay camera-controls interaction-prompt="none"
-                            shadow-intensity="1" class="w-full h-full">
+                            shadow-intensity="1" class="w-full h-full pointer-events-none">
                         </model-viewer>
-                        <div
-                            class="absolute top-4 right-4 bg-black/50 backdrop-blur px-2 py-1 rounded text-xs font-mono text-cyan-400">
-                            AI PROTOTYPE</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Sci-Fi NPC Logic
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Personal Projects
                         </h3>
-                        <p class="text-slate-400 text-sm mb-4">State machine implementation for enemy AI behaviors
-                            including patrolling and combat.</p>
-                        <div class="flex gap-2">
-                            <span
-                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Unity</span>
-                            <span
-                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">C#</span>
-                        </div>
+                        <p class="text-slate-400 text-sm">Game prototypes, tech demos, and creative coding experiments.
+                        </p>
                     </div>
-                </div>
+                </a>
 
-                <!-- Project 2: AR/Prop (UPDATED: Damaged Helmet instead of broken Chair link) -->
-                <div
-                    class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-100">
-                    <div class="h-card-3d bg-slate-900 relative">
-                        <model-viewer
-                            src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF-Binary/DamagedHelmet.glb"
-                            alt="Damaged Sci-Fi Helmet" camera-controls shadow-intensity="1" class="w-full h-full">
-                        </model-viewer>
+                <!-- 3. Hackathons -->
+                <a href="hackathons.html"
+                    class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-200">
+                    <div class="h-48 bg-slate-900 relative flex items-center justify-center">
+                        <i data-lucide="trophy"
+                            class="w-20 h-20 text-yellow-500 group-hover:scale-110 transition-transform duration-500"></i>
+                        <!-- Decorative particles -->
+                        <div class="absolute w-2 h-2 bg-yellow-400 rounded-full top-1/4 left-1/3 animate-ping"></div>
                         <div
-                            class="absolute top-4 right-4 bg-black/50 backdrop-blur px-2 py-1 rounded text-xs font-mono text-cyan-400">
-                            HERO PROP</div>
+                            class="absolute w-1 h-1 bg-yellow-400 rounded-full bottom-1/3 right-1/3 animate-ping delay-300">
+                        </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">PBR Asset
-                            Workflow</h3>
-                        <p class="text-slate-400 text-sm mb-4">High-fidelity texture creation and optimization for
-                            real-time game engines.</p>
-                        <div class="flex gap-2">
-                            <span
-                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Substance</span>
-                            <span
-                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Three.js</span>
-                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Hackathons</h3>
+                        <p class="text-slate-400 text-sm">Award-winning games built in 48-hour sprints.</p>
                     </div>
-                </div>
+                </a>
 
-                <!-- Project 3: Shader/VFX -->
-                <div
-                    class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-200">
-                    <div class="h-card-3d bg-slate-900 relative flex items-center justify-center overflow-hidden">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-tr from-cyan-600 to-indigo-600 opacity-20 group-hover:opacity-30 transition-opacity">
-                        </div>
-                        <!-- Using Lucide icon for abstract representation of code/shaders -->
-                        <i data-lucide="sparkles"
-                            class="w-16 h-16 text-slate-600 group-hover:text-white transition-all duration-500 transform group-hover:scale-110"></i>
+                <!-- 4. Workshops -->
+                <a href="workshops.html"
+                    class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal">
+                    <div class="h-48 bg-slate-900 relative flex items-center justify-center">
+                        <i data-lucide="presentation"
+                            class="w-20 h-20 text-indigo-500 group-hover:scale-110 transition-transform duration-500"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">VFX Particle
-                            System</h3>
-                        <p class="text-slate-400 text-sm mb-4">Optimized compute shader simulation for magical spell
-                            effects and environmental particles.</p>
-                        <div class="flex gap-2">
-                            <span
-                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">HLSL</span>
-                            <span
-                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">VFX
-                                Graph</span>
-                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Workshops</h3>
+                        <p class="text-slate-400 text-sm">Teaching sessions, seminars, and knowledge sharing.</p>
                     </div>
-                </div>
+                </a>
+
+                <!-- 5. Organizations -->
+                <a href="organizations.html"
+                    class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-100">
+                    <div class="h-48 bg-slate-900 relative flex items-center justify-center">
+                        <i data-lucide="users"
+                            class="w-20 h-20 text-pink-500 group-hover:scale-110 transition-transform duration-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Organizations
+                        </h3>
+                        <p class="text-slate-400 text-sm">Memberships and leadership roles in developer communities.</p>
+                    </div>
+                </a>
 
             </div>
         </div>
