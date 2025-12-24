@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Experience - NEXUS XR</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Model Viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Utility for 3D card height */
+        .h-card-3d {
+            height: 250px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation (Placeholder - will be replaced by common nav script if we had one, but manual for now) -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="font-display font-bold text-xl tracking-wider text-white">NEXUS<span
+                            class="text-cyan-400">XR</span></a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+
+                        <!-- Portfolio Dropdown -->
+                        <div class="relative group">
+                            <button
+                                class="text-cyan-400 flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium focus:outline-none">
+                                Portfolio <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div
+                                class="absolute left-0 mt-2 w-48 bg-slate-800 rounded-md shadow-lg py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto border border-slate-700">
+                                <a href="work-experience.html"
+                                    class="block px-4 py-2 text-sm text-cyan-400 bg-slate-700/50">Work Experience</a>
+                                <a href="projects.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Projects</a>
+                                <a href="hackathons.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Hackathons</a>
+                                <a href="workshops.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Workshops</a>
+                                <a href="organizations.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Organizations</a>
+                            </div>
+                        </div>
+
+                        <a href="index.html#about"
+                            class="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="index.html#contact"
+                            class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all transform hover:scale-105">Start
+                            Game</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-btn" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-slate-900 border-b border-slate-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="work-experience.html"
+                    class="text-cyan-400 block px-3 py-2 rounded-md text-base font-medium pl-6">Work Experience</a>
+                <a href="projects.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Projects</a>
+                <a href="hackathons.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Hackathons</a>
+                <a href="workshops.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Workshops</a>
+                <a href="organizations.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Organizations</a>
+                <a href="index.html#about"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="index.html#contact"
+                    class="text-cyan-400 font-bold block px-3 py-2 rounded-md text-base font-medium">Start Game</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-24 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Work Experience</h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg">My professional journey in the XR and Game Development
+                industry.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Job 1 -->
+            <div
+                class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-100">
+                <div class="h-card-3d bg-slate-900 relative flex items-center justify-center p-8">
+                    <!-- Using FontAwesome or similar for company logo placeholder if no image -->
+                    <i data-lucide="briefcase"
+                        class="w-16 h-16 text-cyan-500 group-hover:scale-110 transition-transform"></i>
+                    <div
+                        class="absolute top-4 right-4 bg-cyan-900/50 backdrop-blur px-2 py-1 rounded text-xs font-mono text-cyan-300">
+                        2023 - Present
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-1 group-hover:text-cyan-400 transition-colors">VR Developer</h3>
+                    <p class="text-indigo-400 font-medium mb-3">Immersive Tech Studios</p>
+                    <p class="text-slate-400 text-sm mb-4">Leading the development of a multiplayer VR training
+                        simulation for healthcare professionals. Optimizing for Quest 2/3.</p>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Unity</span>
+                        <span
+                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Photon
+                            Fusion</span>
+                        <span
+                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Oculus
+                            SDK</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div
+                class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-200">
+                <div class="h-card-3d bg-slate-900 relative flex items-center justify-center p-8">
+                    <i data-lucide="gamepad-2"
+                        class="w-16 h-16 text-purple-500 group-hover:scale-110 transition-transform"></i>
+                    <div
+                        class="absolute top-4 right-4 bg-slate-700/50 backdrop-blur px-2 py-1 rounded text-xs font-mono text-slate-300">
+                        2022 - 2023
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-1 group-hover:text-cyan-400 transition-colors">Game Gameplay
+                        Programmer</h3>
+                    <p class="text-indigo-400 font-medium mb-3">Indie Game Collective</p>
+                    <p class="text-slate-400 text-sm mb-4">Implemented core gameplay mechanics for a narrative-driven
+                        platformer. Collaborated with artists to integrate animations.</p>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Unreal
+                            Engine 5</span>
+                        <span
+                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">C++</span>
+                        <span
+                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Blueprints</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div
+                class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-300">
+                <div class="h-card-3d bg-slate-900 relative flex items-center justify-center p-8">
+                    <i data-lucide="code-2"
+                        class="w-16 h-16 text-pink-500 group-hover:scale-110 transition-transform"></i>
+                    <div
+                        class="absolute top-4 right-4 bg-slate-700/50 backdrop-blur px-2 py-1 rounded text-xs font-mono text-slate-300">
+                        2021 (Intern)
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-1 group-hover:text-cyan-400 transition-colors">Software Engineer
+                        Intern</h3>
+                    <p class="text-indigo-400 font-medium mb-3">Tech giant Corp</p>
+                    <p class="text-slate-400 text-sm mb-4">Worked on backend services for cloud gaming infrastructure.
+                        Reduced latency by optimizing data packets.</p>
+
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Python</span>
+                        <span
+                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">AWS</span>
+                        <span
+                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Docker</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-slate-600 text-sm border-t border-slate-800 mt-12">
+        <p>© 2025 NEXUS XR. Built with ModelViewer & Tailwind.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Scroll Reveal
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XR & Game Dev Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Model Viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            /* Slate 900 */
+            color: #f8fafc;
+            /* Slate 50 */
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Model Viewer Customization */
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            --poster-color: transparent;
+        }
+
+        /* Utility for 3D card height */
+        .h-card-3d {
+            height: 300px;
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #22d3ee, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Neon Accents for Game Dev vibe */
+        .neon-border {
+            box-shadow: 0 0 10px rgba(129, 140, 248, 0.3);
+        }
+
+        /* Smooth reveal animation classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <span class="font-display font-bold text-xl tracking-wider text-white">NEXUS<span
+                            class="text-cyan-400">XR</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home"
+                            class="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+
+                        <!-- Portfolio Dropdown -->
+                        <div class="relative group inline-block text-left">
+                            <button
+                                class="text-gray-300 hover:text-cyan-400 flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium focus:outline-none transition-colors">
+                                Portfolio <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div
+                                class="absolute left-0 mt-2 w-48 bg-slate-900 rounded-md shadow-lg py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto border border-slate-700 ring-1 ring-black ring-opacity-5 z-50">
+                                <a href="work-experience.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-800 hover:text-white transition-colors">Work
+                                    Experience</a>
+                                <a href="projects.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-800 hover:text-white transition-colors">Projects</a>
+                                <a href="hackathons.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-800 hover:text-white transition-colors">Hackathons</a>
+                                <a href="workshops.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-800 hover:text-white transition-colors">Workshops</a>
+                                <a href="organizations.html"
+                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-800 hover:text-white transition-colors">Organizations</a>
+                            </div>
+                        </div>
+
+                        <a href="#about"
+                            class="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#contact"
+                            class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all transform hover:scale-105">Start
+                            Game</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-btn" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-slate-900 border-b border-slate-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+
+                <!-- Mobile Dropdown Items (Flattened for mobile) -->
+                <div class="pl-4 border-l-2 border-slate-800 my-2">
+                    <span
+                        class="text-slate-500 block px-3 py-1 text-xs uppercase tracking-wider font-bold">Portfolio</span>
+                    <a href="work-experience.html"
+                        class="text-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Work
+                        Experience</a>
+                    <a href="projects.html"
+                        class="text-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                    <a href="hackathons.html"
+                        class="text-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Hackathons</a>
+                    <a href="workshops.html"
+                        class="text-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Workshops</a>
+                    <a href="organizations.html"
+                        class="text-gray-400 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Organizations</a>
+                </div>
+
+                <a href="#about"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#contact"
+                    class="text-cyan-400 font-bold block px-3 py-2 rounded-md text-base font-medium">Start Game</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <!-- Background decorative blobs -->
+        <div class="absolute top-20 left-[-10%] w-96 h-96 bg-cyan-600/20 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-20 right-[-10%] w-96 h-96 bg-indigo-600/20 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="reveal order-2 lg:order-1 z-10">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <p class="text-cyan-400 font-medium tracking-wide uppercase text-sm">System Online</p>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    Crafting Immersive <br>
+                    <span class="text-gradient">Realities</span>
+                </h1>
+                <p class="text-slate-400 text-lg md:text-xl mb-8 max-w-lg leading-relaxed">
+                    XR Developer & Game Designer. I build interactive worlds, VR simulations, and spatial computing
+                    experiences using Unity & WebGL.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#work"
+                        class="flex items-center justify-center gap-2 bg-white text-slate-900 px-8 py-3 rounded-full font-bold hover:bg-slate-200 transition-all transform hover:-translate-y-1 shadow-lg shadow-white/10">
+                        Load Projects <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#contact"
+                        class="flex items-center justify-center gap-2 border border-slate-700 text-white px-8 py-3 rounded-full font-medium hover:bg-slate-800 transition-all">
+                        Contact
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3D Model Container -->
+            <div class="h-[500px] lg:h-[700px] w-full relative order-1 lg:order-2 reveal delay-200">
+                <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                    alt="A 3D model of an astronaut" auto-rotate camera-controls shadow-intensity="1"
+                    camera-orbit="calc(-1.5rad + env(window-scroll-y) * 4rad) calc(0deg + env(window-scroll-y) * 180deg) 10m"
+                    disable-zoom loading="eager" class="w-full h-full cursor-grab active:cursor-grabbing">
+                </model-viewer>
+
+                <!-- Floating Card Decoration -->
+                <div
+                    class="absolute -bottom-6 -left-6 bg-slate-800/90 backdrop-blur border border-cyan-500/30 p-4 rounded-xl shadow-xl max-w-xs hidden md:block neon-border">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="boxes" class="text-cyan-400 w-4 h-4"></i>
+                        <span class="text-xs font-mono text-slate-300">CURRENT MISSION</span>
+                    </div>
+                    <p class="text-sm font-medium">Developing a Multiplayer VR Sandbox.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work -->
+    <section id="work" class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Deployed Projects</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Selected works in Game Dev, VR, and Interactive 3D.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1: NPC/Character -->
+                <div
+                    class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal">
+                    <div class="h-card-3d bg-gradient-to-br from-slate-700 to-slate-800 relative">
+                        <model-viewer src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" alt="Robot"
+                            animation-name="Running" autoplay camera-controls interaction-prompt="none"
+                            shadow-intensity="1" class="w-full h-full">
+                        </model-viewer>
+                        <div
+                            class="absolute top-4 right-4 bg-black/50 backdrop-blur px-2 py-1 rounded text-xs font-mono text-cyan-400">
+                            AI PROTOTYPE</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Sci-Fi NPC Logic
+                        </h3>
+                        <p class="text-slate-400 text-sm mb-4">State machine implementation for enemy AI behaviors
+                            including patrolling and combat.</p>
+                        <div class="flex gap-2">
+                            <span
+                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Unity</span>
+                            <span
+                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">C#</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: AR/Prop (UPDATED: Damaged Helmet instead of broken Chair link) -->
+                <div
+                    class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-100">
+                    <div class="h-card-3d bg-slate-900 relative">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/DamagedHelmet/glTF-Binary/DamagedHelmet.glb"
+                            alt="Damaged Sci-Fi Helmet" camera-controls shadow-intensity="1" class="w-full h-full">
+                        </model-viewer>
+                        <div
+                            class="absolute top-4 right-4 bg-black/50 backdrop-blur px-2 py-1 rounded text-xs font-mono text-cyan-400">
+                            HERO PROP</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">PBR Asset
+                            Workflow</h3>
+                        <p class="text-slate-400 text-sm mb-4">High-fidelity texture creation and optimization for
+                            real-time game engines.</p>
+                        <div class="flex gap-2">
+                            <span
+                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Substance</span>
+                            <span
+                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Three.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Shader/VFX -->
+                <div
+                    class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-200">
+                    <div class="h-card-3d bg-slate-900 relative flex items-center justify-center overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-cyan-600 to-indigo-600 opacity-20 group-hover:opacity-30 transition-opacity">
+                        </div>
+                        <!-- Using Lucide icon for abstract representation of code/shaders -->
+                        <i data-lucide="sparkles"
+                            class="w-16 h-16 text-slate-600 group-hover:text-white transition-all duration-500 transform group-hover:scale-110"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">VFX Particle
+                            System</h3>
+                        <p class="text-slate-400 text-sm mb-4">Optimized compute shader simulation for magical spell
+                            effects and environmental particles.</p>
+                        <div class="flex gap-2">
+                            <span
+                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">HLSL</span>
+                            <span
+                                class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">VFX
+                                Graph</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Skills -->
+    <section id="about" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Tech Stack</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        I specialize in the intersection of real-time rendering and interactivity. From optimizing draw
+                        calls to designing comfortable VR locomotion, I cover the full pipeline.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Game Engines (Unity/Unreal)</span>
+                                <span class="text-slate-500">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-cyan-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">3D Math & Physics</span>
+                                <span class="text-slate-500">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">XR Interaction Design</span>
+                                <span class="text-slate-500">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-purple-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 reveal delay-200">
+                    <div
+                        class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-cyan-500 transition-colors group">
+                        <i data-lucide="gamepad-2"
+                            class="w-8 h-8 text-cyan-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-bold text-lg mb-2">Gameplay</h3>
+                        <p class="text-sm text-slate-400">Mechanics, Input Systems, Game Loop.</p>
+                    </div>
+                    <div
+                        class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-cyan-500 transition-colors group">
+                        <i data-lucide="glasses"
+                            class="w-8 h-8 text-indigo-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-bold text-lg mb-2">VR / AR</h3>
+                        <p class="text-sm text-slate-400">Oculus SDK, ARKit, Spatial Audio.</p>
+                    </div>
+                    <div
+                        class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-cyan-500 transition-colors group">
+                        <i data-lucide="cpu"
+                            class="w-8 h-8 text-purple-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-bold text-lg mb-2">Optimization</h3>
+                        <p class="text-sm text-slate-400">Profiling, LODs, Occlusion Culling.</p>
+                    </div>
+                    <div
+                        class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-cyan-500 transition-colors group">
+                        <i data-lucide="network"
+                            class="w-8 h-8 text-pink-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-bold text-lg mb-2">Multiplayer</h3>
+                        <p class="text-sm text-slate-400">Replication, Latency handling, Netcode.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <!-- Background decorative blobs -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 reveal">Ready to start the level?</h2>
+            <p class="text-slate-400 mb-10 text-lg reveal delay-100">
+                Looking for a dev for your next Game Jam, VR project, or Interactive installation? Let's team up.
+            </p>
+
+            <form
+                class="space-y-4 text-left bg-slate-800/50 p-8 rounded-3xl border border-slate-700 backdrop-blur-sm reveal delay-200"
+                onsubmit="event.preventDefault(); alert('Message sent to the server!');">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-1">Player Name</label>
+                        <input type="text"
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+                            placeholder="Enter Name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-1">Contact Email</label>
+                        <input type="email"
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+                            placeholder="player1@example.com">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-400 mb-1">Quest Description</label>
+                    <textarea rows="4"
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+                        placeholder="Describe the mission details..."></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-4 rounded-lg transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2">
+                    Start New Game <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </form>
+
+            <div class="mt-12 flex justify-center gap-6 text-slate-400">
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin"
+                        class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-lucide="gamepad" class="w-6 h-6"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-slate-600 text-sm border-t border-slate-800">
+        <p>© 2025 NEXUS XR. Built with ModelViewer & Tailwind.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+
+</html>
