@@ -35,104 +35,16 @@
                 industry.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- Job 1 -->
-            <a href="work/immersive-tech.html"
-                class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-100">
-                <div class="h-card-3d bg-slate-900 relative flex items-center justify-center p-8">
-                    <!-- Using FontAwesome or similar for company logo placeholder if no image -->
-                    <i data-lucide="briefcase"
-                        class="w-16 h-16 text-cyan-500 group-hover:scale-110 transition-transform"></i>
-                    <div
-                        class="absolute top-4 right-4 bg-cyan-900/50 backdrop-blur px-2 py-1 rounded text-xs font-mono text-cyan-300">
-                        2023 - Present
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-1 group-hover:text-cyan-400 transition-colors">VR Developer</h3>
-                    <p class="text-indigo-400 font-medium mb-3">Immersive Tech Studios</p>
-                    <p class="text-slate-400 text-sm mb-4">Leading the development of a multiplayer VR training
-                        simulation for healthcare professionals. Optimizing for Quest 2/3.</p>
-
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Unity</span>
-                        <span
-                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Photon
-                            Fusion</span>
-                        <span
-                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Oculus
-                            SDK</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Job 2 -->
-            <a href="work/indie-game.html"
-                class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-200">
-                <div class="h-card-3d bg-slate-900 relative flex items-center justify-center p-8">
-                    <i data-lucide="gamepad-2"
-                        class="w-16 h-16 text-purple-500 group-hover:scale-110 transition-transform"></i>
-                    <div
-                        class="absolute top-4 right-4 bg-slate-700/50 backdrop-blur px-2 py-1 rounded text-xs font-mono text-slate-300">
-                        2022 - 2023
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-1 group-hover:text-cyan-400 transition-colors">Gameplay Programmer
-                    </h3>
-                    <p class="text-indigo-400 font-medium mb-3">Indie Game Collective</p>
-                    <p class="text-slate-400 text-sm mb-4">Implemented core gameplay mechanics for a narrative-driven
-                        platformer. Collaborated with artists to integrate animations.</p>
-
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Unreal
-                            Engine 5</span>
-                        <span
-                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">C++</span>
-                        <span
-                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Blueprints</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Job 3 -->
-            <a href="work/tech-giant.html"
-                class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-300">
-                <div class="h-card-3d bg-slate-900 relative flex items-center justify-center p-8">
-                    <i data-lucide="code-2"
-                        class="w-16 h-16 text-pink-500 group-hover:scale-110 transition-transform"></i>
-                    <div
-                        class="absolute top-4 right-4 bg-slate-700/50 backdrop-blur px-2 py-1 rounded text-xs font-mono text-slate-300">
-                        2021 (Intern)
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-1 group-hover:text-cyan-400 transition-colors">Software Engineer
-                        Intern</h3>
-                    <p class="text-indigo-400 font-medium mb-3">Tech giant Corp</p>
-                    <p class="text-slate-400 text-sm mb-4">Worked on backend services for cloud gaming infrastructure.
-                        Reduced latency by optimizing data packets.</p>
-
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Python</span>
-                        <span
-                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">AWS</span>
-                        <span
-                            class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">Docker</span>
-                    </div>
-                </div>
-            </a>
-
+        <div id="work-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         </div>
     </div>
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
 
+    <script src="js/cardRenderer.js"></script>
+    <script src="js/workData.js"></script>
     <script src="js/loadComponents.js"></script>
     <script src="js/global.js"></script>
 </body>

@@ -89,6 +89,11 @@ document.addEventListener("components-loaded", () => {
 
 // --- Initialize page-body logic on DOMContentLoaded ---
 document.addEventListener("DOMContentLoaded", () => {
+    // Render any registered card grids (from data files)
+    if (typeof renderAllCards === "function") {
+        renderAllCards();
+    }
+
     // Initialize Lucide icons for the page body (runs before components load)
     lucide.createIcons();
 
