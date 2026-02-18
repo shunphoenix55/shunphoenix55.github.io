@@ -54,78 +54,7 @@
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Adjusted link for subdirectory -->
-                <div class="flex-shrink-0">
-                    <a href="../index.html" class="font-display font-bold text-xl tracking-wider text-white">NEXUS<span
-                            class="text-cyan-400">XR</span></a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="../index.html"
-                            class="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
-
-                        <!-- Portfolio Dropdown -->
-                        <div class="relative group">
-                            <button
-                                class="text-cyan-400 flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium focus:outline-none">
-                                Portfolio <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                            </button>
-                            <div
-                                class="absolute left-0 mt-2 w-48 bg-slate-800 rounded-md shadow-lg py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto border border-slate-700">
-                                <a href="../work-experience.html"
-                                    class="block px-4 py-2 text-sm text-cyan-400 bg-slate-700/50">Work Experience</a>
-                                <a href="../projects.html"
-                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Projects</a>
-                                <a href="../hackathons.html"
-                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Hackathons</a>
-                                <a href="../workshops.html"
-                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Workshops</a>
-                                <a href="../organizations.html"
-                                    class="block px-4 py-2 text-sm text-gray-300 hover:bg-slate-700 hover:text-white">Organizations</a>
-                            </div>
-                        </div>
-
-                        <a href="../index.html#about"
-                            class="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="../index.html#contact"
-                            class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all transform hover:scale-105">Start
-                            Game</a>
-                    </div>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="-mr-2 flex md:hidden">
-                    <button id="mobile-menu-btn" type="button"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none">
-                        <i data-lucide="menu" class="h-6 w-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-slate-900 border-b border-slate-800" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="../index.html"
-                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="../work-experience.html"
-                    class="text-cyan-400 block px-3 py-2 rounded-md text-base font-medium pl-6">Work Experience</a>
-                <a href="../projects.html"
-                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Projects</a>
-                <a href="../hackathons.html"
-                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Hackathons</a>
-                <a href="../workshops.html"
-                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Workshops</a>
-                <a href="../organizations.html"
-                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium pl-6">Organizations</a>
-                <a href="../index.html#about"
-                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
-                <a href="../index.html#contact"
-                    class="text-cyan-400 font-bold block px-3 py-2 rounded-md text-base font-medium">Start Game</a>
-            </div>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <!-- Hero Section -->
     <header class="pt-32 pb-12 relative overflow-hidden">
@@ -286,20 +215,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 text-center text-slate-600 text-sm border-t border-slate-800 mt-12">
-        <p>© 2025 NEXUS XR. Built with ModelViewer & Tailwind.</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script>
-        lucide.createIcons();
-        // Mobile Menu Toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
+    <script src="../js/loadComponents.js"></script>
+    <script src="../js/global.js"></script>
 </body>
 
 </html>
