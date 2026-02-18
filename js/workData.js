@@ -9,44 +9,51 @@
 
 const workExperience = [
     {
-        slug: "immersive-tech",
+        slug: "anomaly-shooter",
 
         card: {
             coverImage: "assets/covers/immersive-tech.jpg",
             fallbackIcon: "briefcase",
-            duration: "2023 - Present",
+            duration: "Feb 2025 - Present",
             durationStyle: "bg-cyan-900/50 text-cyan-300",
-            title: "VR Developer",
-            company: "Immersive Tech Studios",
-            description: "Leading the development of a multiplayer VR training simulation for healthcare professionals. Optimizing for Quest 2/3.",
+            title: "PvP Arena Shooter VR",
+            company: "Anomaly Labs",
+            description: "Battle it out with your friends in a multiplayer shooter in VR! Set in a futuristic sci-fi world, you gather powerups and use them strategically to gain the upper hand in matches!",
             tech: ["Unity", "Photon Fusion", "Oculus SDK"]
         },
 
         page: {
             heroIcon: "briefcase",
             heroIconColor: "text-cyan-500",
-            duration: "2023 - Present",
+            duration: "Feb 2025 - Present",
             badgeStyle: "bg-cyan-900/30 border-cyan-500/30 text-cyan-400",
-            title: "VR Developer",
-            company: "Immersive Tech Studios",
+            title: "PvP Arena Shooter VR",
+            company: "Anomaly Labs",
 
             overview: [
-                "At Immersive Tech Studios, I lead the technical development of a high-fidelity multiplayer VR training simulation designed for the healthcare industry. My primary responsibility is ensuring the stability and realism of the simulation, which allows medical professionals to practice complex surgical procedures in a risk-free environment.",
-                "I work closely with 3D artists and instructional designers to translate medical protocols into interactive XR mechanics. The project requires highly optimized assets to run smoothly on standalone headsets like the Oculus Quest 3 while maintaining a realistic visual standard."
+                "Battle it out with your friends in a multiplayer shooter in VR! Set in a futuristic sci-fi world, you gather powerups and use them strategically to gain the upper hand in matches!"
             ],
 
             contributions: [
                 {
                     title: "Multiplayer Networking Architecture",
-                    description: "Engineered a robust networked object pooling system using Photon Fusion, handling 500+ interactive physics objects with latency compensation for seamless multi-user interaction."
+                    description: "Engineered a multiplayer system using Unity NGO that supports both peer-to-peer and server-based connections."
                 },
                 {
-                    title: "Hand-Tracking Integration",
-                    description: "Implemented precision hand-tracking mechanics using the Oculus Interaction SDK, allowing users to grab and manipulate microscopic tools with natural dexterity."
+                    title: "FPS System",
+                    description: "Built an FPS system with haptics and VR-specific visuals"
+                },
+                {
+                    title: "Avatar System",
+                    description: "Created an avatar system that allows you to take any rigged humanoid and convert it to a VR Rig that follows your head and hand movements."
                 },
                 {
                     title: "Performance Optimization",
-                    description: "Reduced average draw calls from 1200 to 150 using aggressive occlusion culling and HLOD (Hierarchical Level of Detail) systems, ensuring a steady 72fps on mobile hardware."
+                    description: "Optimized the game for the Meta Quest 2 and 3, achieving a stable 72fps."
+                },
+                {
+                    title: "Graphics & Visuals",
+                    description: "Created custom shaders to create visuals that enhance the sci-fi aesthetic"
                 }
             ],
 
