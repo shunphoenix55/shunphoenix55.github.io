@@ -1,12 +1,15 @@
 /**
  * Work Experience — Data + Card Template
+ *
+ * Each job supports an optional `coverImage` for a full-width header photo.
+ * If missing/empty, `fallbackIcon` is shown as a centered Lucide icon.
  */
 
 const workExperience = [
     {
         link: "work/immersive-tech.html",
-        icon: "briefcase",
-        iconColor: "text-cyan-500",
+        coverImage: "assets/covers/immersive-tech.png",
+        fallbackIcon: "briefcase",
         duration: "2023 - Present",
         durationStyle: "bg-cyan-900/50 text-cyan-300",
         title: "VR Developer",
@@ -16,8 +19,8 @@ const workExperience = [
     },
     {
         link: "work/indie-game.html",
-        icon: "gamepad-2",
-        iconColor: "text-purple-500",
+        coverImage: "assets/covers/indie-game.jpg",
+        fallbackIcon: "gamepad-2",
         duration: "2022 - 2023",
         durationStyle: "bg-slate-700/50 text-slate-300",
         title: "Gameplay Programmer",
@@ -27,8 +30,8 @@ const workExperience = [
     },
     {
         link: "work/tech-giant.html",
-        icon: "code-2",
-        iconColor: "text-pink-500",
+        coverImage: "assets/covers/tech-giant.jpg",
+        fallbackIcon: "code-2",
         duration: "2021 (Intern)",
         durationStyle: "bg-slate-700/50 text-slate-300",
         title: "Software Engineer Intern",
@@ -43,13 +46,29 @@ function workCardTemplate(job, index) {
         `<span class="text-xs bg-slate-900 border border-slate-700 px-2 py-1 rounded text-slate-400">${t}</span>`
     ).join("");
 
+    const headerContent = job.coverImage
+        ? `
+            <div class="absolute inset-0">
+                <img src="${job.coverImage}"
+                     alt="${job.company} cover"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     loading="lazy">
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
+          `
+        : `
+            <div class="flex items-center justify-center w-full h-full">
+                <i data-lucide="${job.fallbackIcon}"
+                   class="w-16 h-16 text-cyan-500 group-hover:scale-110 transition-transform"></i>
+            </div>
+          `;
+
     return `
         <a href="${job.link}"
            class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-${(index + 1) * 100}">
-            <div class="h-card-3d bg-slate-900 relative flex items-center justify-center p-8">
-                <i data-lucide="${job.icon}"
-                   class="w-16 h-16 ${job.iconColor} group-hover:scale-110 transition-transform"></i>
-                <div class="absolute top-4 right-4 ${job.durationStyle} backdrop-blur px-2 py-1 rounded text-xs font-mono">
+            <div class="h-card-3d bg-slate-900 relative overflow-hidden flex items-center justify-center">
+                ${headerContent}
+                <div class="absolute top-4 right-4 ${job.durationStyle} backdrop-blur px-2 py-1 rounded text-xs font-mono z-10">
                     ${job.duration}
                 </div>
             </div>

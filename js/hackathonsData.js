@@ -1,12 +1,16 @@
 /**
  * Hackathons — Data + Card Template
+ *
+ * Each hackathon supports an optional `coverImage` for the left media area.
+ * Falls back to `fallbackIcon` (Lucide icon) when missing.
  */
 
 const hackathonsData = [
     {
         link: "hackathons/global-game-jam.html",
-        icon: "trophy",
-        iconColor: "text-yellow-500",
+        coverImage: "assets/covers/global-game-jam.jpg",
+        fallbackIcon: "trophy",
+        fallbackIconColor: "text-yellow-500",
         hasOverlay: true,
         overlayColor: "bg-yellow-500/10",
         title: "Global Game Jam 2024",
@@ -21,8 +25,9 @@ const hackathonsData = [
     },
     {
         link: "hackathons/ludum-dare.html",
-        icon: "code",
-        iconColor: "text-purple-500",
+        coverImage: "",
+        fallbackIcon: "code",
+        fallbackIconColor: "text-purple-500",
         hasOverlay: false,
         title: "Ludum Dare 53",
         award: "Top 100 Graphics",
@@ -40,6 +45,18 @@ function hackathonCardTemplate(hack, index) {
         ? `<div class="absolute inset-0 ${hack.overlayColor} opacity-0 group-hover:opacity-100 transition-opacity"></div>`
         : "";
 
+    const mediaContent = hack.coverImage
+        ? `
+            <img src="${hack.coverImage}" alt="${hack.title} cover"
+                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 loading="lazy">
+            <div class="absolute inset-0 bg-black/40"></div>
+          `
+        : `
+            <i data-lucide="${hack.fallbackIcon}" class="w-16 h-16 ${hack.fallbackIconColor}"></i>
+            ${overlayHTML}
+          `;
+
     const actionTags = hack.actions.map(a =>
         `<span class="${a.style}">
             <i data-lucide="${a.icon}" class="w-4 h-4"></i> ${a.label}
@@ -50,8 +67,7 @@ function hackathonCardTemplate(hack, index) {
         <a href="${hack.link}"
            class="block bg-slate-800/50 rounded-2xl p-8 border border-slate-700 hover:border-cyan-500/50 transition-all reveal delay-${index * 100} flex flex-col md:flex-row gap-6 items-center group">
             <div class="w-full md:w-1/3 aspect-video bg-slate-900 rounded-xl overflow-hidden flex items-center justify-center relative">
-                <i data-lucide="${hack.icon}" class="w-16 h-16 ${hack.iconColor}"></i>
-                ${overlayHTML}
+                ${mediaContent}
             </div>
             <div class="flex-1 text-center md:text-left">
                 <div class="flex flex-col md:flex-row justify-between items-center mb-2">

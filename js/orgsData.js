@@ -1,10 +1,14 @@
 /**
  * Organizations — Data + Card Template
+ *
+ * Each org supports an optional `coverImage` for the avatar area.
+ * Falls back to `avatar` text initials when missing.
  */
 
 const orgsData = [
     {
         link: "orgs/gamedev-society.html",
+        coverImage: "assets/covers/gamedev-society.jpg",
         avatar: "GD",
         title: "Game Dev Society",
         role: "President (2023 - Present)",
@@ -12,6 +16,7 @@ const orgsData = [
     },
     {
         link: "orgs/xr-union.html",
+        coverImage: "",
         avatar: "XR",
         title: "XR Creators Union",
         role: "Member",
@@ -20,12 +25,24 @@ const orgsData = [
 ];
 
 function orgCardTemplate(org, index) {
+    const avatarContent = org.coverImage
+        ? `
+            <div class="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                <img src="${org.coverImage}" alt="${org.title} logo"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     loading="lazy">
+            </div>
+          `
+        : `
+            <div class="w-20 h-20 bg-slate-700 rounded-full flex items-center justify-center text-3xl font-bold text-cyan-500 group-hover:bg-slate-600 transition-colors flex-shrink-0">
+                ${org.avatar}
+            </div>
+          `;
+
     return `
         <a href="${org.link}"
            class="block bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-cyan-500/50 transition-all reveal delay-${index * 100} flex items-center gap-6 group">
-            <div class="w-20 h-20 bg-slate-700 rounded-full flex items-center justify-center text-3xl font-bold text-cyan-500 group-hover:bg-slate-600 transition-colors">
-                ${org.avatar}
-            </div>
+            ${avatarContent}
             <div>
                 <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
                     ${org.title}</h3>
