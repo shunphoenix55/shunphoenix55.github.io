@@ -77,6 +77,77 @@ const hackathonsData = [
         ]
     }
 },
+{
+    "slug": "metasoccer",
+
+    "card": {
+        "coverImage": "",
+        "fallbackIcon": "gamepad-2",
+        "fallbackIconColor": "text-cyan-500",
+        "hasOverlay": true,
+        "overlayColor": "bg-cyan-500/10",
+        "title": "ArtCade (SFMOMA)",
+        "award": "Semi-Finalist",
+        "awardStyle": "text-cyan-400 font-mono text-sm bg-cyan-900/30 px-3 py-1 rounded-full border border-cyan-500/30",
+        "projectName": "Project: \"MetaSoccer\"",
+        "description": "Designed an interactive soccer simulation concept where players dynamically modify game rules and observe emergent AI-driven behaviors.",
+        "actions": [
+            {
+                "icon": "image",
+                "label": "View Concept",
+                "style": "flex items-center gap-2 text-white bg-cyan-600 hover:bg-cyan-700 px-4 py-2 rounded-lg transition-colors"
+            }
+        ]
+    },
+
+    "page": {
+        "heroIcon": "gamepad-2",
+        "heroIconColor": "text-cyan-500",
+        "title": "MetaSoccer",
+        "subtitle": "Interactive Game Design Concept",
+        "award": "SFMOMA ArtCade - Semi-Finalist",
+        "awardStyle": "px-4 py-2 bg-cyan-500/20 text-cyan-400 border border-cyan-500/50 rounded-lg font-bold",
+        "bannerIcon": "sliders",
+
+        "overview": [
+            "MetaSoccer is an interactive soccer simulation concept designed for large touch-screen installations, where players can modify game rules in real time.",
+            "The experience explores emergent gameplay by allowing users to tweak parameters such as field size, player count, ball physics, and rule sets.",
+            "AI-driven players dynamically adapt their strategies based on the changing conditions, creating unpredictable and evolving outcomes.",
+            "The project was proposed as part of SFMOMA’s ArtCade, which showcases interactive games in a museum setting.",
+            "This work focused purely on game design, systems thinking, and interaction design, without implementation or programming."
+        ],
+
+        "achievements": [
+            {
+                "title": "ArtCade Recognition",
+                "description": "Selected as a semi-finalist for SFMOMA’s ArtCade, highlighting the project's innovation in interactive game design."
+            },
+            {
+                "title": "Systems-Driven Design",
+                "description": "Designed a rule-modification framework enabling players to explore and break conventional limits of sports simulations."
+            },
+            {
+                "title": "Interactive Experience Design",
+                "description": "Conceptualized intuitive UI interactions using sliders, toggles, and buttons for real-time control over simulation parameters."
+            }
+        ],
+
+        "techStack": ["Game Design", "Systems Design", "Interaction Design"],
+
+        "statsTitle": "Stats",
+        "statsBoxStyle": "bg-gradient-to-br from-cyan-900/20 to-sky-900/20 border-cyan-500/20",
+        "stats": [
+            { "label": "Event", "value": "SFMOMA ArtCade" },
+            { "label": "Location", "value": "Vellore, Tamil Nadu" },
+            { "label": "Project Type", "value": "Game Design" },
+            { "label": "Role", "value": "Game Designer" }
+        ],
+
+        "links": [
+            { "icon": "image", "label": "SFMOMA Website", "url": "https://www.sfmoma.org/exhibition/artcade/" }
+        ]
+    }
+},
     {
     slug: "wtfxigdc-2024",
 
@@ -222,6 +293,299 @@ const hackathonsData = [
 
         "links": [
             { "icon": "image", "label": "Project Page", "url": "/projects/detail.html?slug=bhashaxr" },
+        ]
+    } 
+},
+{
+    "slug": "drone-assembly-xr",
+
+    "card": {
+        "coverImage": "",
+        "fallbackIcon": "cpu",
+        "fallbackIconColor": "text-blue-500",
+        "hasOverlay": true,
+        "overlayColor": "bg-blue-500/10",
+        "title": "Yantra '23",
+        "award": "3rd Place Winner",
+        "awardStyle": "text-blue-400 font-mono text-sm bg-blue-900/30 px-3 py-1 rounded-full border border-blue-500/30",
+        "projectName": "Project: \"3Ducation - Drone Assembly\"",
+        "description": "Developed a VR-based educational application teaching users how to assemble drones and mechanical components through interactive 3D guidance.",
+        "actions": [
+            {
+                "icon": "play-circle",
+                "label": "View Project",
+                "style": "flex items-center gap-2 text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors"
+            },
+            {
+                "icon": "github",
+                "label": "Source Code",
+                "style": "flex items-center gap-2 text-white bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition-colors"
+            }
+        ]
+    },
+
+    "page": {
+        "heroIcon": "cpu",
+        "heroIconColor": "text-blue-500",
+        "title": "Drone Assembly - 3Ducation",
+        "subtitle": "XR-Based Hardware Learning Experience",
+        "award": "Yantra '23 - 3rd Place",
+        "awardStyle": "px-4 py-2 bg-blue-500/20 text-blue-400 border border-blue-500/50 rounded-lg font-bold",
+        "bannerIcon": "box",
+
+        "overview": [
+            "3Ducation is a virtual reality application designed to teach users how to assemble complex hardware systems such as drones and mechanical components.",
+            "The project leverages immersive XR environments to guide users step-by-step through assembly processes, improving comprehension and engagement.",
+            "Developed during Yantra '23 in Vellore, focusing on practical learning through interactive 3D visualization.",
+            "Built for Meta Quest 2 using Unity, emphasizing intuitive interaction and real-time feedback."
+        ],
+
+        "achievements": [
+            {
+                "title": "Competition Recognition",
+                "description": "Secured 3rd place at Yantra '23 for innovation in educational XR applications."
+            },
+            {
+                "title": "Interactive Learning System",
+                "description": "Designed a guided assembly workflow enabling users to understand complex hardware structures in VR."
+            },
+            {
+                "title": "XR Implementation",
+                "description": "Developed core VR interactions using Unity XR Interaction Toolkit for seamless object manipulation and user input."
+            }
+        ],
+
+        "techStack": ["Unity", "C#", "XR Development", "XR Interaction Toolkit", "VR"],
+
+        "statsTitle": "Stats",
+        "statsBoxStyle": "bg-gradient-to-br from-blue-900/20 to-indigo-900/20 border-blue-500/20",
+        "stats": [
+            { "label": "Event", "value": "Yantra '23" },
+            { "label": "Location", "value": "Vellore, India" },
+            { "label": "Platform", "value": "Meta Quest 2" },
+            { "label": "Role", "value": "Unity XR Developer" }
+        ],
+
+        "links": [
+            { "icon": "play", "label": "View Project", "url": "" },
+            { "icon": "image", "label": "Project Page", "url": "" },
+            { "icon": "github", "label": "GitHub Repository", "url": "" }
+        ]
+    }
+},
+{
+    "slug": "devsoc-2023",
+
+    "card": {
+        "coverImage": "",
+        "fallbackIcon": "users",
+        "fallbackIconColor": "text-orange-500",
+        "hasOverlay": true,
+        "overlayColor": "bg-orange-500/10",
+        "title": "DEVSOC '23",
+        "award": "Coordinator",
+        "awardStyle": "text-orange-400 font-mono text-sm bg-orange-900/30 px-3 py-1 rounded-full border border-orange-500/30",
+        "projectName": "Role: \"XR & Game Dev Mentor\"",
+        "description": "Served as a coordinator and mentor for XR and Game Development tracks at one of South Asia’s largest student-run hackathons.",
+        "actions": [
+            {
+                "icon": "users",
+                "label": "View Event",
+                "style": "flex items-center gap-2 text-white bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-lg transition-colors"
+            }
+        ]
+    },
+
+    "page": {
+        "heroIcon": "users",
+        "heroIconColor": "text-orange-500",
+        "title": "DEVSOC '23",
+        "subtitle": "South Asia’s Largest Student-Run Hackathon",
+        "award": "Coordinator & Mentor",
+        "awardStyle": "px-4 py-2 bg-orange-500/20 text-orange-400 border border-orange-500/50 rounded-lg font-bold",
+        "bannerIcon": "trophy",
+
+        "overview": [
+            "DEVSOC '23 is CodeChef-VIT’s flagship hackathon and one of South Asia’s largest student-run technical events, with over 1300 participants.",
+            "Participants competed across multiple tracks including AR/VR, Blockchain, Open Innovation, Social Good, Automation Tools, Health & Welfare, and 5G.",
+            "The event featured a prize pool of ₹3,00,000 and attracted diverse projects from across the region.",
+            "Served as a coordinator, focusing on XR and Game Development domains."
+        ],
+
+        "achievements": [
+            {
+                "title": "Mentorship & Evaluation",
+                "description": "Reviewed and mentored XR and Game Development projects, providing technical guidance and feedback to participants."
+            },
+            {
+                "title": "Event Coordination",
+                "description": "Contributed to organizing and managing one of the largest student-run hackathons in South Asia."
+            },
+            {
+                "title": "Technical Leadership",
+                "description": "Supported participants in problem-solving, design decisions, and implementation strategies in XR and game development."
+            }
+        ],
+
+        "techStack": ["XR Development", "Game Development", "Mentorship", "Technical Review"],
+
+        "statsTitle": "Stats",
+        "statsBoxStyle": "bg-gradient-to-br from-orange-900/20 to-amber-900/20 border-orange-500/20",
+        "stats": [
+            { "label": "Event", "value": "DEVSOC '23" },
+            { "label": "Location", "value": "Vellore, Tamil Nadu" },
+            { "label": "Participants", "value": "1300+" },
+            { "label": "Role", "value": "Coordinator & Mentor" }
+        ],
+
+        "links": [
+            { "icon": "users", "label": "View Event", "url": "https://www.devsoc.codechefvit.com" }
+        ]
+    }
+},
+{
+    "slug": "rcade",
+
+    "card": {
+        "coverImage": "",
+        "fallbackIcon": "activity",
+        "fallbackIconColor": "text-green-500",
+        "hasOverlay": true,
+        "overlayColor": "bg-green-500/10",
+        "title": "WomenTechies '23",
+        "award": "2nd Place Winner",
+        "awardStyle": "text-green-400 font-mono text-sm bg-green-900/30 px-3 py-1 rounded-full border border-green-500/30",
+        "projectName": "Project: \"RCade\"",
+        "description": "Developed a gamified fitness application that recommends exercises to manage body pain, integrating real-time body tracking for interactive engagement.",
+        "actions": [
+            {
+                "icon": "play-circle",
+                "label": "View Project",
+                "style": "flex items-center gap-2 text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition-colors"
+            },
+            {
+                "icon": "github",
+                "label": "Source Code",
+                "style": "flex items-center gap-2 text-white bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition-colors"
+            }
+        ]
+    },
+
+    "page": {
+        "heroIcon": "activity",
+        "heroIconColor": "text-green-500",
+        "title": "RCade",
+        "subtitle": "Gamified Exercise & Rehabilitation Application",
+        "award": "WomenTechies '23 - 2nd Place",
+        "awardStyle": "px-4 py-2 bg-green-500/20 text-green-400 border border-green-500/50 rounded-lg font-bold",
+        "bannerIcon": "heart-pulse",
+
+        "overview": [
+            "RCade is a Unity-based application designed to recommend exercises for managing common body pains through an engaging, gamified experience.",
+            "The platform enhances user motivation by incorporating game mechanics into exercise routines, encouraging consistency and adherence.",
+            "Built during WomenTechies '23 in Vellore, focusing on accessible and interactive health solutions.",
+            "Integrated real-time body tracking to provide feedback and ensure correct exercise execution."
+        ],
+
+        "achievements": [
+            {
+                "title": "Competition Recognition",
+                "description": "Secured 2nd place at WomenTechies '23 for innovation in gamified health applications."
+            },
+            {
+                "title": "Body Tracking Integration",
+                "description": "Implemented real-time body tracking using MediaPipe to monitor user movements and provide feedback."
+            },
+            {
+                "title": "Game Systems & UI",
+                "description": "Designed core gameplay systems and programmed UI/UX interactions to enhance usability and engagement."
+            }
+        ],
+
+        "techStack": ["Unity", "C#", "MediaPipe", "Game Development", "UI/UX"],
+
+        "statsTitle": "Stats",
+        "statsBoxStyle": "bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-500/20",
+        "stats": [
+            { "label": "Event", "value": "WomenTechies '23" },
+            { "label": "Location", "value": "Vellore, India" },
+            { "label": "Project Type", "value": "Programming" },
+            { "label": "Role", "value": "Unity Developer" }
+        ],
+
+        "links": [
+            { "icon": "play", "label": "View Project", "url": "" },
+            { "icon": "image", "label": "Project Page", "url": "" },
+            { "icon": "github", "label": "GitHub Repository", "url": "" }
+        ]
+    }
+},
+{
+    "slug": "groupiee",
+
+    "card": {
+        "coverImage": "",
+        "fallbackIcon": "users",
+        "fallbackIconColor": "text-purple-500",
+        "hasOverlay": true,
+        "overlayColor": "bg-purple-500/10",
+        "title": "DevJams '21",
+        "award": "Finalist",
+        "awardStyle": "text-purple-400 font-mono text-sm bg-purple-900/30 px-3 py-1 rounded-full border border-purple-500/30",
+        "projectName": "Project: \"Groupiee\"",
+        "description": "Built a travel matchmaking platform that connects users with similar interests and locations to collaboratively plan trips.",
+        "actions": [
+            {
+                "icon": "github",
+                "label": "Source Code",
+                "style": "flex items-center gap-2 text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition-colors"
+            }
+        ]
+    },
+
+    "page": {
+        "heroIcon": "users",
+        "heroIconColor": "text-purple-500",
+        "title": "Groupiee",
+        "subtitle": "Social Travel Planning Platform",
+        "award": "DevJams '21 - Finalist",
+        "awardStyle": "px-4 py-2 bg-purple-500/20 text-purple-400 border border-purple-500/50 rounded-lg font-bold",
+        "bannerIcon": "map",
+
+        "overview": [
+            "Groupiee is a web platform that connects users with similar interests and geographic proximity to collaboratively plan trips.",
+            "The platform streamlines group travel by matching compatible users and enabling coordinated trip planning.",
+            "Developed during DevJams '21 as a remote hackathon project, focusing on social discovery and travel organization."
+        ],
+
+        "achievements": [
+            {
+                "title": "Hackathon Recognition",
+                "description": "Selected as a finalist at DevJams '21."
+            },
+            {
+                "title": "Backend Architecture",
+                "description": "Designed and implemented the complete backend using Flask, enabling scalable API development."
+            },
+            {
+                "title": "Database Integration",
+                "description": "Built and integrated a MongoDB database to manage user data, matching logic, and trip information."
+            }
+        ],
+
+        "techStack": ["Python", "Flask", "MongoDB", "Backend Development"],
+
+        "statsTitle": "Stats",
+        "statsBoxStyle": "bg-gradient-to-br from-purple-900/20 to-fuchsia-900/20 border-purple-500/20",
+        "stats": [
+            { "label": "Event", "value": "DevJams '21" },
+            { "label": "Location", "value": "Remote" },
+            { "label": "Project Type", "value": "Web Development" },
+            { "label": "Role", "value": "Backend Developer" }
+        ],
+
+        "links": [
+            { "icon": "github", "label": "GitHub Repository", "url": "https://github.com/shunphoenix55/Groupiee-DevJams21-GDSC" }
         ]
     }
 }
