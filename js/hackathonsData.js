@@ -9,117 +9,222 @@
 
 const hackathonsData = [
     {
-        slug: "global-game-jam",
+    slug: "global-game-jam-2025",
 
-        card: {
-            coverImage: "assets/covers/global-game-jam.jpg",
-            fallbackIcon: "trophy",
-            fallbackIconColor: "text-yellow-500",
-            hasOverlay: true,
-            overlayColor: "bg-yellow-500/10",
-            title: "Global Game Jam 2024",
-            award: "1st Place - Innovation",
-            awardStyle: "text-cyan-400 font-mono text-sm bg-cyan-900/30 px-3 py-1 rounded-full border border-cyan-500/30",
-            projectName: 'Project: "Echoes of Time"',
-            description: "Built a VR puzzle game where players manipulate time to solve physics-based challenges. Used Unity's new Input System and XR Interaction Toolkit.",
-            actions: [
-                { icon: "github", label: "Repo", style: "flex items-center gap-2 text-white bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition-colors" },
-                { icon: "play-circle", label: "Watch Gameplay", style: "flex items-center gap-2 text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-colors" }
-            ]
-        },
-
-        page: {
-            heroIcon: "trophy",
-            heroIconColor: "text-yellow-500",
-            title: "Global Game Jam 2024",
-            subtitle: 'Theme: "Make Me Laugh"',
-            award: "Best Visuals Award",
-            awardStyle: "px-4 py-2 bg-yellow-500/20 text-yellow-400 border border-yellow-500/50 rounded-lg font-bold",
-            bannerIcon: "gamepad-2",
-
-            overview: [
-                "\"Clown Chaos\" is a physics-based party game created in 48 hours for the Global Game Jam 2024. Players control unicycle-riding clowns attempting to perform circus acts while dodging tomatoes thrown by the audience.",
-                "My role was lead programmer, responsible for the character controller and the tomato-throwing AI. The game's ragdoll physics and vibrant art style earned us the \"Best Visuals\" award at our local jamming site."
-            ],
-
-            achievements: [
-                {
-                    title: "48-Hour Turnaround",
-                    description: "Delivered a fully playable, bug-free build within the strict time limit."
-                },
-                {
-                    title: "Ragdoll Physics",
-                    description: "Implemented active ragdoll physics that blended animation with simulated physics for hilarious results."
-                }
-            ],
-
-            techStack: ["Unity", "C#"],
-
-            statsTitle: "Stats",
-            statsBoxStyle: "bg-gradient-to-br from-yellow-900/20 to-orange-900/20 border-yellow-500/20",
-            stats: [
-                { label: "Team Size", value: "4 People" },
-                { label: "Result", value: "Best Visuals" }
-            ],
-
-            links: [
-                { icon: "external-link", label: "Playing Itch.io", url: "#" }
-            ]
-        }
+    card: {
+        coverImage: "assets/covers/global-game-jam.jpg",
+        fallbackIcon: "trophy",
+        fallbackIconColor: "text-yellow-500",
+        hasOverlay: true,
+        overlayColor: "bg-yellow-500/10",
+        title: "Global Game Jam 2025",
+        award: "Game Jam Project",
+        awardStyle: "text-pink-400 font-mono text-sm bg-pink-900/30 px-3 py-1 rounded-full border border-pink-500/30",
+        projectName: 'Project: "Bubbleoidvania"',
+        description: "Developed a 2D platformer with a versatile bubble mechanic during Global Game Jam 2025, enabling players to shield, glide, and roll through challenging levels.",
+        actions: [
+            { icon: "play-circle", label: "Play Game", style: "flex items-center gap-2 text-white bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg transition-colors" },
+            { icon: "github", label: "Source Code", style: "flex items-center gap-2 text-white bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition-colors" }
+        ]
     },
 
-    {
-        slug: "ludum-dare",
+    page: {
+        heroIcon: "trophy",
+        heroIconColor: "text-pink-500",
+        title: "Global Game Jam 2025",
+        subtitle: "48-Hour International Game Development Event",
+        award: "Featured Project: Bubbleoidvania",
+        awardStyle: "px-4 py-2 bg-pink-500/20 text-pink-400 border border-pink-500/50 rounded-lg font-bold",
+        bannerIcon: "gamepad-2",
 
-        card: {
-            coverImage: "",
-            fallbackIcon: "code",
-            fallbackIconColor: "text-purple-500",
-            hasOverlay: false,
-            title: "Ludum Dare 53",
-            award: "Top 100 Graphics",
-            awardStyle: "text-slate-400 font-mono text-sm bg-slate-700/50 px-3 py-1 rounded-full",
-            projectName: 'Project: "Delivery Boi"',
-            description: "A wacky physics delivery game. Responsible for chaotic vehicle physics and cel-shaded art direction.",
-            actions: [
-                { icon: "globe", label: "Itch.io Page", style: "flex items-center gap-2 text-white bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition-colors" }
-            ]
-        },
+        overview: [
+            "Global Game Jam is the world’s largest game creation event, where developers across the globe collaborate to build games within a strict 48-hour timeframe based on a shared theme.",
+            "As part of Global Game Jam 2025, developed \"Bubbleoidvania\", a fast-paced 2D platformer centered around a dynamic bubble mechanic that enhances movement and survival.",
+            "The project was built at the Bangalore Keywords Studios site, emphasizing rapid prototyping, teamwork, and creative problem-solving under time constraints."
+        ],
 
-        page: {
-            heroIcon: "clock",
-            heroIconColor: "text-orange-500",
-            title: "Ludum Dare 53",
-            subtitle: 'Theme: "Delivery"',
-            award: "",
-            bannerIcon: "box",
+        achievements: [
+            {
+                title: "Innovative Core Mechanic",
+                description: "Designed a multi-functional bubble system enabling shielding, gliding, and rolling, forming the foundation of gameplay."
+            },
+            {
+                title: "48-Hour Delivery",
+                description: "Successfully developed a complete and playable game within the limited jam duration."
+            },
+            {
+                title: "Cross-Platform Deployment",
+                description: "Delivered a build playable across Web, Windows, Mac, and Linux platforms."
+            }
+        ],
 
-            overview: [
-                "\"Pizza Panzer\" is a chaotic arcade game where you drive a tank to deliver pizzas across a war-torn battlefield. This project was developed solo in 72 hours for the \"Compo\" category of Ludum Dare 53.",
-                "The core mechanic involves balancing speed with the structural integrity of the pizza tower on your roof. Driving too fast over bumpy terrain causes pizzas to fly off!"
-            ],
+        techStack: ["Unity", "C#", ".NET", "2D Game Development"],
 
-            achievements: [
-                {
-                    title: "Custom Vehicle Physics",
-                    description: "Wrote a raycast-based suspension system from scratch to give the tank a \"bouncy\" arcade feel compared to standard Unity wheel colliders."
-                }
-            ],
+        statsTitle: "Stats",
+        statsBoxStyle: "bg-gradient-to-br from-pink-900/20 to-rose-900/20 border-pink-500/20",
+        stats: [
+            { label: "Event", value: "Global Game Jam 2025" },
+            { label: "Location", value: "Bangalore Keywords Studios" },
+            { label: "Team Size", value: "5 Developers" },
+            { label: "Genre", value: "2D Platformer" },
+            { label: "Platform", value: "Web / PC / Mac / Linux" }
+        ],
 
-            techStack: ["Unity", "Aseprite"],
-
-            statsTitle: "Stats",
-            statsBoxStyle: "bg-gradient-to-br from-orange-900/20 to-red-900/20 border-orange-500/20",
-            stats: [
-                { label: "Team Size", value: "Solo" },
-                { label: "Result", value: "Top 100 Humor" }
-            ],
-
-            links: [
-                { icon: "external-link", label: "Ludum Dare Page", url: "#" }
-            ]
-        }
+        links: [
+            { icon: "play", label: "Play Online", url: "https://play.unity.com/en/games/ff55b6c0-5ecb-4660-828c-7fc7eee4d6ec/bubbleoidvania" },
+            { icon: "image", label: "Project Page", url: "/projects/detail.html?slug=bubbleoidvania" },
+            { icon: "github", label: "GitHub Repository", url: "https://github.com/devslayer8/GGJ_2025" }
+        ]
     }
+},
+    {
+    slug: "wtfxigdc-2024",
+
+    card: {
+        coverImage: "assets/covers/clink.jpg",
+        fallbackIcon: "code",
+        fallbackIconColor: "text-yellow-500",
+        hasOverlay: false,
+        title: "WTFxIGDC Game Jam 2024",
+        award: "Game Jam Project",
+        awardStyle: "text-slate-400 font-mono text-sm bg-slate-700/50 px-3 py-1 rounded-full",
+        projectName: 'Project: "Clink!"',
+        description: "A puzzle platformer featuring a chain-based character with resource-driven movement and dual-ended control mechanics.",
+        actions: [
+            { icon: "globe", label: "Itch.io Page", style: "flex items-center gap-2 text-white bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition-colors" }
+        ]
+    },
+
+    page: {
+        heroIcon: "link",
+        heroIconColor: "text-yellow-500",
+        title: "WTFxIGDC Game Jam 2024",
+        subtitle: 'Theme: "Chain Reaction"',
+        award: "",
+        bannerIcon: "link",
+
+        overview: [
+            "Participated in the WTFxIGDC Game Jam 2024, a rapid game development event focused on building innovative games around a central theme within a limited timeframe.",
+            "Developed 'Clink!', a puzzle platformer centered on a snake made of chain links, introducing a unique mechanic where movement consumes resources.",
+            "The game emphasizes strategic decision-making, physics-based interaction, and creative puzzle-solving using dual-ended control."
+        ],
+
+        achievements: [
+            {
+                title: "Chain-Based Movement System",
+                description: "Each jump consumes a chain link, forcing players to balance progression with resource management."
+            },
+            {
+                title: "Dual-End Control Mechanic",
+                description: "Switch control between the snake’s head and tail to approach puzzles from different perspectives and interactions."
+            },
+            {
+                title: "Physics-Based Grabbing",
+                description: "Latch onto hooks, crates, and environmental elements using either end of the chain to navigate levels."
+            },
+            {
+                title: "Elemental Chain Abilities",
+                description: "Special chain types interact with specific obstacles, adding variety and depth to puzzle-solving."
+            },
+            {
+                title: "Hazard Interaction",
+                description: "Environmental dangers like spikes can break your chain, dynamically altering your state and strategy."
+            }
+        ],
+
+        techStack: ["Unity", "C#", "2D Physics", "Game Design Systems"],
+
+        statsTitle: "Stats",
+        statsBoxStyle: "bg-gradient-to-br from-yellow-900/20 to-amber-900/20 border-yellow-500/20",
+        stats: [
+            { label: "Event", value: "WTFxIGDC Game Jam 2024" },
+            { label: "Theme", value: "Chain Reaction" },
+            { label: "Project", value: "Clink!" },
+            { label: "Genre", value: "Puzzle Platformer" },
+            { label: "Platform", value: "Web (WebGL)" }
+        ],
+
+        links: [
+            {icon: "image", label: "Project Page", url: "/projects/detail.html?slug=clink" },
+            { icon: "external-link", label: "Itch.io Page", url: "https://dasaniket15.itch.io/clink" },
+        ]
+    }
+},
+{
+    "slug": "bhasha-xr",
+
+    "card": {
+        "coverImage": "",
+        "fallbackIcon": "award",
+        "fallbackIconColor": "text-yellow-500",
+        "hasOverlay": true,
+        "overlayColor": "bg-yellow-500/10",
+        "title": "Yantra '24",
+        "award": "Best UI/UX & Best in Education",
+        "awardStyle": "text-yellow-400 font-mono text-sm bg-yellow-900/30 px-3 py-1 rounded-full border border-yellow-500/30",
+        "projectName": "Project: \"BhashaXR\"",
+        "description": "Developed a VR-based language learning platform focused on Indian languages, featuring AI-driven personalization and immersive interaction systems.",
+        "actions": [
+            {
+                "icon": "play-circle",
+                "label": "View Project",
+                "style": "flex items-center gap-2 text-white bg-yellow-600 hover:bg-yellow-700 px-4 py-2 rounded-lg transition-colors"
+            },
+            {
+                "icon": "github",
+                "label": "Source Code",
+                "style": "flex items-center gap-2 text-white bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg transition-colors"
+            }
+        ]
+    },
+
+    "page": {
+        "heroIcon": "award",
+        "heroIconColor": "text-yellow-500",
+        "title": "Yantra '24 Winning Project",
+        "subtitle": "VR Language Learning Platform",
+        "award": "Winner: Best UI/UX & Best in Education",
+        "awardStyle": "px-4 py-2 bg-yellow-500/20 text-yellow-400 border border-yellow-500/50 rounded-lg font-bold",
+        "bannerIcon": "languages",
+
+        "overview": [
+            "BhashaXR is a virtual reality language learning platform designed to provide an immersive and natural approach to acquiring new languages.",
+            "The project focuses on Indian languages, addressing their underrepresentation in mainstream language learning applications.",
+            "An AI-driven system analyzes user responses and adapts learning recommendations, enabling a personalized learning experience.",
+            "Developed for Meta Quest 3, emphasizing intuitive interaction and real-time feedback within a VR environment."
+        ],
+
+        "achievements": [
+            {
+                "title": "Award-Winning Design",
+                "description": "Recognized at Yantra '24 with awards for Best UI/UX and Best in Education."
+            },
+            {
+                "title": "AI-Powered Personalization",
+                "description": "Integrated backend AI models to analyze voice input and tailor learning recommendations dynamically."
+            },
+            {
+                "title": "Advanced XR Interaction",
+                "description": "Implemented hand tracking and gesture-based interactions using Meta Interaction SDK for immersive user experience."
+            }
+        ],
+
+        "techStack": ["Unity", "C#", "XR Development", "Meta Interaction SDK", "AI Integration"],
+
+        "statsTitle": "Stats",
+        "statsBoxStyle": "bg-gradient-to-br from-yellow-900/20 to-amber-900/20 border-yellow-500/20",
+        "stats": [
+            { "label": "Event", "value": "Yantra '24" },
+            { "label": "Category", "value": "Education / XR" },
+            { "label": "Platform", "value": "Meta Quest 3" },
+            { "label": "Role", "value": "Unity XR Developer" }
+        ],
+
+        "links": [
+            { "icon": "image", "label": "Project Page", "url": "/projects/detail.html?slug=bhashaxr" },
+        ]
+    }
+}
 ];
 
 // --- Card Template (uses hack.card.*) ---

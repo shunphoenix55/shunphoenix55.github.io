@@ -8,107 +8,227 @@
  */
 
 const workshopsData = [
-    {
-        slug: "shader-intro",
+   {
+    slug: "devsoc-23",
 
-        card: {
-            coverImage: "assets/covers/shader-intro.jpg",
-            fallbackIcon: "presentation",
-            iconBg: "bg-cyan-900/30",
-            iconColor: "text-cyan-400",
-            title: "Introduction to Shaders in Unity",
-            date: "March 2024",
-            role: "Speaker @ GameDev University Club",
-            description: "Conducted a 2-hour hands-on workshop teaching 50+ students how to write basic HLSL shaders and use Shader Graph to create dissolve effects."
-        },
-
-        page: {
-            heroIcon: "presentation",
-            heroIconColor: "text-indigo-500",
-            title: "Intro to Shader Graph",
-            subtitle: "Technical Art Workshop",
-            bannerIcon: "palette",
-
-            overview: [
-                "A comprehensive 2-hour interactive workshop designed to demystify shader development for students and beginner game developers. The session focused on using Unity's Shader Graph to create visually stunning effects without writing a single line of HLSL code.",
-                "Attendees learned core concepts like UV manipulation, vertex displacement, and PBR properties by building a \"Holographic Shield\" effect from scratch."
-            ],
-
-            highlights: [
-                {
-                    title: "Visual Scripting Logic",
-                    description: "Explained the math behind common nodes (Sine, Lerp, Step) using visual analogies."
-                },
-                {
-                    title: "Hands-on Lab",
-                    description: "Guided 30+ participants through creating their own custom dissolve shader."
-                }
-            ],
-
-            detailsTitle: "Details",
-            details: [
-                { label: "Date", value: "Oct 2023" },
-                { label: "Audience", value: "University Game Dev Club" },
-                { label: "Role", value: "Speaker / Instructor" }
-            ],
-
-            resourcesBoxStyle: "bg-gradient-to-br from-indigo-900/20 to-blue-900/20 border-indigo-500/20",
-            resources: [
-                { icon: "file-text", label: "Presentation Slides", url: "#" },
-                { icon: "github", label: "Sample Project Repo", url: "#" }
-            ]
-        }
+    card: {
+        coverImage: "assets/covers/devsoc.jpg",
+        fallbackIcon: "trophy",
+        iconBg: "bg-yellow-900/30",
+        iconColor: "text-yellow-400",
+        title: "DEVSOC '23",
+        date: "May 2023",
+        role: "Coordinator",
+        description: "Reviewed and mentored XR and Game Development projects at South Asia’s largest student-run hackathon with 1300+ participants."
     },
 
-    {
-        slug: "webxr",
+    page: {
+        heroIcon: "trophy",
+        heroIconColor: "text-yellow-500",
+        title: "DEVSOC '23",
+        subtitle: "Hackathon",
+        bannerIcon: "users",
 
-        card: {
-            coverImage: "",
-            fallbackIcon: "users",
-            iconBg: "bg-purple-900/30",
-            iconColor: "text-purple-400",
-            title: "The Future of WebXR",
-            date: "November 2023",
-            role: "Attendee @ XR Summit",
-            description: "Participated in deep-dive sessions regarding WebGPU and upcoming browser standards for high-performance graphics on the web."
-        },
+        overview: [
+            "Served as a coordinator for DEVSOC '23, CodeChef-VIT’s flagship hackathon and one of the largest student-run hackathons in South Asia.",
+            "Contributed to the evaluation and mentorship of projects in the XR and Game Development tracks, supporting participants in building and refining their solutions."
+        ],
 
-        page: {
-            heroIcon: "presentation",
-            heroIconColor: "text-cyan-500",
-            title: "WebXR Development",
-            subtitle: "Building for the Immersive Web",
-            bannerIcon: "globe",
+        highlights: [
+            {
+                title: "Project Review & Mentorship",
+                description: "Evaluated XR and Game Development submissions, providing technical guidance and feedback to participants."
+            },
+            {
+                title: "Large-Scale Event Execution",
+                description: "Helped manage and support a hackathon with 1300+ participants across multiple domains and a prize pool of ₹3 lakhs."
+            },
+            {
+                title: "Multi-Domain Exposure",
+                description: "Engaged with projects across diverse tracks including AR/VR, Blockchain, Social Good, Automation, Health, and 5G."
+            }
+        ],
 
-            overview: [
-                "A seminar exploring the capabilities of the WebXR Device API. This talk covered the current state of browser-based VR/AR, optimizing 3D assets for the web using glTF, and deploying experiences using Three.js and A-Frame."
-            ],
+        detailsTitle: "Details",
+        details: [
+            { label: "Date", value: "May 2023" },
+            { label: "Role", value: "Coordinator" },
+            { label: "Location", value: "Vellore, Tamil Nadu" },
+            { label: "Participants", value: "1300+" }
+        ],
 
-            highlights: [
-                {
-                    title: "Framework Comparison",
-                    description: "Three.js vs A-Frame vs Babylon.js - choosing the right tool for the job."
-                },
-                {
-                    title: "Performance Optimization",
-                    description: "Techniques for maintaining 90fps in the browser, including geometry instancing and texture compression."
-                }
-            ],
-
-            detailsTitle: "Details",
-            details: [
-                { label: "Date", value: "March 2023" },
-                { label: "Audience", value: "Web Dev Meetup" },
-                { label: "Role", value: "Guest Speaker" }
-            ],
-
-            resourcesBoxStyle: "bg-gradient-to-br from-cyan-900/20 to-teal-900/20 border-cyan-500/20",
-            resources: [
-                { icon: "file-text", label: "Presentation Slides", url: "#" }
-            ]
-        }
+        resourcesBoxStyle: "bg-gradient-to-br from-yellow-900/20 to-orange-900/20 border-yellow-500/20",
+        resources: [
+            { icon: "globe", label: "Event Page", url: "https://www.devsoc.codechefvit.com" }
+        ]
     }
+},
+
+    {
+    slug: "beyond-reality-xr",
+
+    card: {
+        coverImage: "assets/covers/beyond-reality.jpg",
+        fallbackIcon: "video",
+        iconBg: "bg-indigo-900/30",
+        iconColor: "text-indigo-400",
+        title: "Beyond Reality: Exploring the World of XR",
+        date: "May 2023",
+        role: "Speaker",
+        description: "Delivered a webinar introducing AR, VR, and MR concepts, covering fundamentals and real-world applications of immersive technologies."
+    },
+
+    page: {
+        heroIcon: "video",
+        heroIconColor: "text-indigo-500",
+        title: "Beyond Reality: Exploring the World of XR",
+        subtitle: "Webinar",
+        bannerIcon: "globe",
+
+        overview: [
+            "Conducted an introductory webinar focused on Extended Reality (XR), covering the fundamentals of Augmented Reality (AR), Virtual Reality (VR), and Mixed Reality (MR).",
+            "Designed for beginners, the session provided clear conceptual explanations and explored how immersive technologies are applied across industries."
+        ],
+
+        highlights: [
+            {
+                title: "XR Fundamentals",
+                description: "Explained the core differences and characteristics of AR, VR, and MR in a structured and accessible format."
+            },
+            {
+                title: "Industry Applications",
+                description: "Showcased real-world use cases of XR across domains such as gaming, healthcare, education, and simulation."
+            },
+            {
+                title: "Beginner-Friendly Delivery",
+                description: "Simplified complex concepts to make immersive technologies approachable for newcomers."
+            }
+        ],
+
+        detailsTitle: "Details",
+        details: [
+            { label: "Date", value: "May 2023" },
+            { label: "Format", value: "Webinar" },
+            { label: "Platform", value: "YouTube" },
+            { label: "Role", value: "Speaker" }
+        ],
+
+        resourcesBoxStyle: "bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border-indigo-500/20",
+        resources: [
+            { icon: "video", label: "Watch Recording", url: "https://www.youtube.com/watch?v=66vHCPDkxh0" }
+        ]
+    }
+},
+{
+    slug: "blender-intro-workshop",
+
+    card: {
+        coverImage: "assets/covers/blender-intro.jpg",
+        fallbackIcon: "cube",
+        iconBg: "bg-orange-900/30",
+        iconColor: "text-orange-400",
+        title: "Introduction to 3D Modelling using Blender",
+        date: "Dec 2022",
+        role: "Instructor",
+        description: "Created and delivered a beginner-friendly workshop series teaching 3D asset creation and environment design in Blender."
+    },
+
+    page: {
+        heroIcon: "cube",
+        heroIconColor: "text-orange-500",
+        title: "Introduction to 3D Modelling using Blender",
+        subtitle: "Workshop",
+        bannerIcon: "video",
+
+        overview: [
+            "Designed and delivered a structured video workshop series introducing beginners to 3D modelling for games using Blender.",
+            "Focused on practical, hands-on learning by guiding participants through the complete creation of a game-ready indoor environment."
+        ],
+
+        highlights: [
+            {
+                title: "End-to-End Asset Creation",
+                description: "Demonstrated how to model, arrange, and decorate a complete 3D game environment from scratch."
+            },
+            {
+                title: "Game-Oriented Workflow",
+                description: "Focused on creating assets and scenes suitable for integration into game engines."
+            },
+            {
+                title: "Beginner-Friendly Approach",
+                description: "Structured content to help newcomers build confidence and foundational skills in 3D modelling."
+            }
+        ],
+
+        detailsTitle: "Details",
+        details: [
+            { label: "Date", value: "December 2022" },
+            { label: "Format", value: "Workshop Series" },
+            { label: "Platform", value: "YouTube" },
+            { label: "Role", value: "Instructor" }
+        ],
+
+        resourcesBoxStyle: "bg-gradient-to-br from-orange-900/20 to-amber-900/20 border-orange-500/20",
+        resources: [
+            { icon: "video", label: "Watch Video", url: "https://www.youtube.com/live/ECxKsiI0mWc" }
+        ]
+    }
+},
+{
+    slug: "fruit-ninja-unity-workshop",
+
+    card: {
+        coverImage: "assets/covers/fruit-ninja-unity.jpg",
+        fallbackIcon: "smartphone",
+        iconBg: "bg-green-900/30",
+        iconColor: "text-green-400",
+        title: "Going Mobile: Creating Fruit Ninja in Unity",
+        date: "May 2023",
+        role: "Instructor",
+        description: "Conducted a hands-on workshop teaching mobile game development in Unity by recreating Fruit Ninja and deploying it to devices."
+    },
+
+    page: {
+        heroIcon: "smartphone",
+        heroIconColor: "text-green-500",
+        title: "Going Mobile: Creating Fruit Ninja in Unity",
+        subtitle: "Workshop",
+        bannerIcon: "gamepad-2",
+
+        overview: [
+            "Delivered a hands-on workshop focused on mobile game development using Unity, centered around recreating the core mechanics of a Fruit Ninja-style game.",
+            "Guided participants through the full development pipeline, from project setup to implementing gameplay systems and deploying to mobile devices."
+        ],
+
+        highlights: [
+            {
+                title: "Core Gameplay Systems",
+                description: "Implemented slicing mechanics, touch input handling, collision detection, and scoring systems."
+            },
+            {
+                title: "Mobile Development Workflow",
+                description: "Covered Unity’s mobile toolchain, optimization basics, and deployment to Android/iOS devices."
+            },
+            {
+                title: "End-to-End Learning",
+                description: "Enabled participants to build, test, and ship a complete mobile game prototype."
+            }
+        ],
+
+        detailsTitle: "Details",
+        details: [
+            { label: "Date", value: "May 2023" },
+            { label: "Format", value: "Workshop" },
+            { label: "Platform", value: "YouTube" },
+            { label: "Role", value: "Instructor" }
+        ],
+
+        resourcesBoxStyle: "bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-500/20",
+        resources: [
+            { icon: "video", label: "Watch Workshop", url: "https://www.youtube.com/live/Ad7H5l7yu38" }
+        ]
+    }
+},
 ];
 
 // --- Card Template (uses ws.card.*) ---

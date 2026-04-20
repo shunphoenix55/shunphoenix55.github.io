@@ -8,94 +8,113 @@
  */
 
 const orgsData = [
-    {
-        slug: "gamedev-society",
+{
+    slug: "codechef-vit",
 
-        card: {
-            coverImage: "assets/covers/gamedev-society.jpg",
-            avatar: "GD",
-            title: "Game Dev Society",
-            role: "President (2023 - Present)",
-            description: "Organizing weekly meetups, guest lectures, and semester-long game jams for the university community."
-        },
-
-        page: {
-            heroIcon: "joystick",
-            heroIconColor: "text-orange-500",
-            title: "Game Dev Society",
-            subtitle: "Student Organization",
-            bannerIcon: "users",
-
-            overview: [
-                "As President of the Game Development Society, I led a student body of over 150 members, fostering a collaborative environment for aspiring game developers, artists, and designers.",
-                "My primary focus was on bridging the gap between academic theory and industry practice by organizing guest lectures, workshops, and large-scale game jams."
-            ],
-
-            achievements: [
-                {
-                    title: "Event Organization",
-                    description: "Organized and hosted the 'Winter Game Jam 2023', creating a platform for 20 teams to showcase their prototypes to industry judges."
-                },
-                {
-                    title: "Mentorship Program",
-                    description: "Launched a peer-mentorship initiative pairing senior students with freshmen to assist in learning Unity and C#."
-                }
-            ],
-
-            detailsTitle: "Details",
-            details: [
-                { label: "Duration", value: "2022 - 2024" },
-                { label: "Role", value: "President" }
-            ],
-
-            linksBoxStyle: "bg-gradient-to-br from-orange-900/20 to-red-900/20 border-orange-500/20",
-            links: [
-                { icon: "globe", label: "Society Website", url: "#" }
-            ]
-        }
+    card: {
+        coverImage: "assets/covers/codechef-vit.jpg",
+        avatar: "CC",
+        title: "CodeChef VIT",
+        role: "XR Lead (2022 - 2024)",
+        description: "Worked on AR/VR initiatives, event organization, and mentorship within one of VIT’s leading technical clubs."
     },
 
-    {
-        slug: "xr-union",
+    page: {
+        heroIcon: "code",
+        heroIconColor: "text-yellow-500",
+        title: "CodeChef VIT",
+        subtitle: "Volunteer Organization",
+        bannerIcon: "users",
 
-        card: {
-            coverImage: "",
-            avatar: "XR",
-            title: "XR Creators Union",
-            role: "Member",
-            description: "Active contributor to open-source WebXR tools and libraries."
-        },
+        overview: [
+            "Contributed as an XR Developer at CodeChef-VIT, one of VIT’s premier technical clubs, focusing on augmented reality and immersive technology initiatives.",
+            "Actively supported large-scale technical events, mentorship programs, and community learning through workshops and hackathons."
+        ],
 
-        page: {
-            heroIcon: "glasses",
-            heroIconColor: "text-cyan-500",
-            title: "XR Student Union",
-            subtitle: "University Community",
-            bannerIcon: "network",
+        achievements: [
+            {
+                title: "Event Coordination",
+                description: "Organized and conducted Cook Off, India’s largest student-run competitive coding event, and coordinated efforts for DEVSOC hackathon."
+            },
+            {
+                title: "XR Development",
+                description: "Developed AR filters and 3D assets, and built augmented reality experiences using Unity and SparkAR for marketing and engagement."
+            },
+            {
+                title: "Community & Mentorship",
+                description: "Led technical sessions on AR/VR, mentored participants in XR and Game Development, and reviewed projects during DEVSOC."
+            },
+            {
+                title: "Speaker Outreach",
+                description: "Managed speaker outreach for Tech Talks, a flagship event focused on emerging technologies."
+            }
+        ],
 
-            overview: [
-                "Co-founded a student community dedicated to exploring Extended Reality (XR) technologies. Our mission was to provide students with access to VR/AR hardware that is typically restricted to research labs."
-            ],
+        detailsTitle: "Details",
+        details: [
+            { label: "Duration", value: "March 2022 - January 2024" },
+            { label: "Role", value: "XR Developer" },
+            { label: "Location", value: "Vellore, Tamil Nadu" }
+        ],
 
-            achievements: [
-                {
-                    title: "Equipment Funding",
-                    description: "Successfully campaigned for university funding to acquire 5 Meta Quest 2 headsets for student use."
-                }
-            ],
-
-            detailsTitle: "Details",
-            details: [
-                { label: "Duration", value: "2021 - 2023" },
-                { label: "Role", value: "Co-Founder" }
-            ],
-
-            linksBoxStyle: "bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border-cyan-500/20",
-            links: [
-                { icon: "globe", label: "Union Page", url: "#" }
-            ]
-        }
+        linksBoxStyle: "bg-gradient-to-br from-yellow-900/20 to-orange-900/20 border-yellow-500/20",
+        links: [
+            { icon: "globe", label: "Organization Page", url: "https://www.codechefvit.com/events" }
+        ]
     }
+},
+
+   {
+    slug: "tag-club-vit",
+
+    card: {
+        coverImage: "assets/covers/tag-club-vit.jpg",
+        avatar: "TAG",
+        title: "TAG Club VIT",
+        role: "Projects Lead (2022 - 2024)",
+        description: "Led game development initiatives, organized flagship events, and mentored students in game creation and design."
+    },
+
+    page: {
+        heroIcon: "gamepad-2",
+        heroIconColor: "text-purple-500",
+        title: "TAG Club VIT",
+        subtitle: "Volunteer Organization",
+        bannerIcon: "users",
+
+        overview: [
+            "Served as Projects Lead at TAG Club, VIT’s official Game Development and Gaming Club, focusing on fostering a strong game development community.",
+            "Played a key role in organizing major game development and eSports events while mentoring students and conducting technical sessions."
+        ],
+
+        achievements: [
+            {
+                title: "Event Leadership",
+                description: "Coordinated 'Studio 2 Stage', the club’s flagship game jam, and managed operations for 'Gameathon', a large-scale eSports event."
+            },
+            {
+                title: "Technical Workshops",
+                description: "Conducted sessions on Unity and Blender, helping students build foundational and advanced game development skills."
+            },
+            {
+                title: "Mentorship",
+                description: "Guided junior members in game development, providing hands-on support throughout their project lifecycles."
+            }
+        ],
+
+        detailsTitle: "Details",
+        details: [
+            { label: "Duration", value: "March 2022 - January 2024" },
+            { label: "Role", value: "Projects Lead" },
+            { label: "Location", value: "Vellore, Tamil Nadu" }
+        ],
+
+        linksBoxStyle: "bg-gradient-to-br from-purple-900/20 to-indigo-900/20 border-purple-500/20",
+        links: [
+            { icon: "globe", label: "Club Page", url: "https://www.instagram.com/tagclub.vit/" }
+        ]
+    }
+}
 ];
 
 // --- Card Template (uses org.card.*) ---
