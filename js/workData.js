@@ -12,7 +12,7 @@ const workExperience = [
         slug: "anomaly-shooter",
 
         card: {
-            coverImage: "assets/covers/immersive-tech.jpg",
+            coverImage: "assets/covers/doom-town.png",
             fallbackIcon: "briefcase",
             duration: "Feb 2025 - Present",
             durationStyle: "bg-cyan-900/50 text-cyan-300",
@@ -78,7 +78,7 @@ const workExperience = [
         slug: "vr-dnd",
 
         card: {
-            coverImage: "assets/covers/indie-game.jpg",
+            coverImage: "https://t4.ftcdn.net/jpg/06/33/56/55/360_F_633565587_BmoYccbwbhjZcRKL9kWSwKU0WiSgeIhP.jpg",
             fallbackIcon: "gamepad-2",
             duration: "Feb 2025 - May 2025",
             durationStyle: "bg-slate-700/50 text-slate-300",
@@ -134,7 +134,7 @@ const workExperience = [
         slug: "white-rabbit",
 
         card: {
-            coverImage: "assets/covers/tech-giant.jpg",
+            coverImage: "assets/covers/white-rabbit.jpg",
             fallbackIcon: "code-2",
             duration: "November 2023 - June 2024",
             durationStyle: "bg-slate-700/50 text-slate-300",
@@ -191,7 +191,7 @@ const workExperience = [
         slug: "iva-plus",
 
         card: {
-            coverImage: "assets/covers/tech-giant.jpg",
+            coverImage: "assets/covers/iva-plus.png",
             fallbackIcon: "code-2",
             duration: "August 2023 - December 2023 (Internship)",
             durationStyle: "bg-slate-700/50 text-slate-300",
@@ -253,7 +253,7 @@ const workExperience = [
         slug: "halara",
 
         card: {
-            coverImage: "assets/covers/tech-giant.jpg",
+            coverImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRl60qBjkRyGatST-J2sRm1smr7O9uTHR48w&s",
             fallbackIcon: "code-2",
             duration: "July 2022 - November 2022 (Internship)",
             durationStyle: "bg-slate-700/50 text-slate-300",
@@ -305,7 +305,7 @@ const workExperience = [
         slug: "virtual-bride",
 
         card: {
-            coverImage: "assets/covers/tech-giant.jpg",
+            coverImage: "https://sulakshanamonga.com/cdn/shop/products/2_ce6969ce-cd85-4d51-a7b7-bd9c54e4df88.jpg?v=1663138104&width=1200",
             fallbackIcon: "code-2",
             duration: "April 2023 - June 2023 (Freelance)",
             durationStyle: "bg-slate-700/50 text-slate-300",
