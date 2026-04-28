@@ -12,7 +12,7 @@ const hackathonsData = [
     slug: "global-game-jam-2025",
 
     card: {
-        coverImage: "assets/covers/global-game-jam.jpg",
+        coverImage: "",
         fallbackIcon: "trophy",
         fallbackIconColor: "text-yellow-500",
         hasOverlay: true,
@@ -152,7 +152,7 @@ const hackathonsData = [
     slug: "wtfxigdc-2024",
 
     card: {
-        coverImage: "assets/covers/clink.jpg",
+        coverImage: "",
         fallbackIcon: "code",
         fallbackIconColor: "text-yellow-500",
         hasOverlay: false,

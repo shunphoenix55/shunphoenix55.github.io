@@ -12,7 +12,7 @@ const orgsData = [
     slug: "codechef-vit",
 
     card: {
-        coverImage: "assets/covers/codechef-vit.jpg",
+        coverImage: "",
         avatar: "CC",
         title: "CodeChef VIT",
         role: "XR Lead (2022 - 2024)",
@@ -68,7 +68,7 @@ const orgsData = [
     slug: "tag-club-vit",
 
     card: {
-        coverImage: "assets/covers/tag-club-vit.jpg",
+        coverImage: "",
         avatar: "TAG",
         title: "TAG Club VIT",
         role: "Projects Lead (2022 - 2024)",

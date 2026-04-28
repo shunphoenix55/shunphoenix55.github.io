@@ -29,6 +29,7 @@ const workExperience = [
             badgeStyle: "bg-cyan-900/30 border-cyan-500/30 text-cyan-400",
             title: "PvP Arena Shooter VR",
             company: "Gameplay Programmer - Anomaly Labs",
+            bannerImage: "assets/covers/doom-town.png",
 
             overview: [
                 "Battle it out with your friends in a multiplayer shooter in VR! Set in a futuristic sci-fi world, you gather powerups and use them strategically to gain the upper hand in matches!"
@@ -95,6 +96,7 @@ const workExperience = [
             badgeStyle: "bg-purple-900/30 border-purple-500/30 text-purple-400",
             title: "Dungeons and Dragons VR",
             company: "Gameplay Programmer - Anomaly Labs",
+            bannerImage: "https://t4.ftcdn.net/jpg/06/33/56/55/360_F_633565587_BmoYccbwbhjZcRKL9kWSwKU0WiSgeIhP.jpg",
 
             overview: ["A narrative driven RPG based on Dungeons and Dragons. Experience a unique system of turn-based VR combat. The story changes depending on your choices. Perform various skill checks using VR dice."
             ],
@@ -151,6 +153,7 @@ const workExperience = [
             badgeStyle: "bg-pink-900/30 border-pink-500/30 text-pink-400",
             title: "White Rabbit",
             company: "C++ Programmer - Dissent Studio",
+            bannerImage: "assets/covers/white-rabbit.jpg",
 
             overview: ["White Rabbit unfolds within the abandoned remnants of an amusement theme park, concealing a clandestine research facility. This once-thriving park, now overgrown with nature, serves as the backdrop for a narrative of intrigue and exploration."
             ],
@@ -208,6 +211,7 @@ const workExperience = [
             badgeStyle: "bg-pink-900/30 border-pink-500/30 text-pink-400",
             title: "Intelligent Vision Analyzer Plus",
             company: "C# Programmer - Alfaleus Technology",
+            bannerImage: "assets/covers/iva-plus.png",
 
             overview: ["iVA+ is a VR application that is used to perform eye testing. It is primarily used to detect glaucoma, beating out the Goldmann machine in terms of accuracy and price.",
                 "It also features tests for visual acuity, contrast and colorblindness"
@@ -270,6 +274,7 @@ const workExperience = [
             badgeStyle: "bg-pink-900/30 border-pink-500/30 text-pink-400",
             title: "Halara",
             company: "Unity Programmer",
+            bannerImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRl60qBjkRyGatST-J2sRm1smr7O9uTHR48w&s",
 
             overview: ["Halara is a Virtual Reality platform to help train and develop children with Autism through providing immersive environments that simulate daily essential activities and learn while playing games in 3D.",
             ],
@@ -322,6 +327,7 @@ const workExperience = [
             badgeStyle: "bg-pink-900/30 border-pink-500/30 text-pink-400",
             title: "Virtual Bride",
             company: "Unity Programmer - Sulakshana Monga",
+            bannerImage: "https://sulakshanamonga.com/cdn/shop/products/2_ce6969ce-cd85-4d51-a7b7-bd9c54e4df88.jpg?v=1663138104&width=1200",
 
             overview: ["Virtual Bride is a shopping app which lets you try out Bridal Wear in Augmented Reality for iOS devices. It is designed to help brides-to-be visualize how different outfits will look on them before making a purchase.",
             ],
@@ -357,7 +363,7 @@ const workExperience = [
         slug: "ation-studios",
 
         card: {
-            coverImage: "assets/covers/tech-giant.jpg",
+            coverImage: "assets/covers/immersive-tech.png",
             fallbackIcon: "code-2",
             duration: "February 2022 - May 2022 (Internship)",
             durationStyle: "bg-slate-700/50 text-slate-300",
@@ -374,6 +380,7 @@ const workExperience = [
             badgeStyle: "bg-pink-900/30 border-pink-500/30 text-pink-400",
             title: "Ation Studios",
             company: "Blender Animator",
+            bannerImage: "assets/covers/immersive-tech.png",
 
             overview: ["Ation Studios is a creative agency that specializes in 3D modeling and animation. It is designed to help clients visualize their ideas in a dynamic and engaging way.",
             ],
@@ -432,7 +439,7 @@ function workCardTemplate(job, index) {
 
     return `
         <a href="work/detail.html?slug=${job.slug}"
-           class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 reveal delay-${(index + 1) * 100}">
+           class="block group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300">
             <div class="h-card-3d bg-slate-900 relative overflow-hidden flex items-center justify-center">
                 ${headerContent}
                 <div class="absolute top-4 right-4 ${card.durationStyle} backdrop-blur px-2 py-1 rounded text-xs font-mono z-10">
