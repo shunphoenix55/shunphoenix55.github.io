@@ -14,7 +14,7 @@ const projectsData = [
     card: {
         coverImage: "assets/projects/metasoccer/concept_1.jpg",
         fallbackIcon: "gamepad-2",
-        badge: "Unity",
+        badge: "Game Design",
         badgeStyle: "bg-black/50 backdrop-blur text-cyan-400",
         title: "MetaSoccer",
         description: "Semi-finalist for San Francisco Museum of Modern Art (SFMOMA)'s ArtCade, MetaSoccer is an interactive soccer simulator where players dynamically alter the rules of the game and watch AI-controlled soccer players adapt their strategies in real time.",
@@ -226,7 +226,7 @@ const projectsData = [
     slug: "bubbleoidvania",
 
     card: {
-        coverImage: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        coverImage: "assets/projects/bubbleoidvania/content.png",
         fallbackIcon: "gamepad-2",
         badge: "Game Jam",
         badgeStyle: "bg-black/50 backdrop-blur text-pink-400",
