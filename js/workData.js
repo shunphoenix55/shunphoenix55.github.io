@@ -273,12 +273,12 @@ const workExperience = [
         slug: "halara",
 
         card: {
-            coverImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRl60qBjkRyGatST-J2sRm1smr7O9uTHR48w&s",
+            coverImage: "assets/work/halara/halara.png",
             fallbackIcon: "code-2",
             duration: "July 2022 - November 2022 (Internship)",
             durationStyle: "bg-slate-700/50 text-slate-300",
             title: "Halara",
-            company: "Unity Programmer",
+            company: "Unity Programmer - Halara",
             description: "Halara is a Virtual Reality platform to help train and develop children with Autism through providing immersive environments that simulate daily essential activities and learn while playing games in 3D.",
             tech: ["Unity", "C#", "PICO SDK", "XR Interaction Toolkit"]
         },
@@ -290,7 +290,8 @@ const workExperience = [
             badgeStyle: "bg-pink-900/30 border-pink-500/30 text-pink-400",
             title: "Halara",
             company: "Unity Programmer",
-            bannerImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRl60qBjkRyGatST-J2sRm1smr7O9uTHR48w&s",
+            // bannerImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRl60qBjkRyGatST-J2sRm1smr7O9uTHR48w&s",
+            youtubeUrl:"https://www.youtube.com/watch?v=oc0IxjpXRCE",
 
             overview: ["Halara is a Virtual Reality platform to help train and develop children with Autism through providing immersive environments that simulate daily essential activities and learn while playing games in 3D.",
             ],
@@ -319,7 +320,14 @@ const workExperience = [
                 { label: "Team Size", value: "10" }
             ],
 
-            gallery: []
+            links: [
+                {icon:"link", label:"Halara Website", url:"https://halaravr.co.in"},
+            ],
+
+            gallery: [
+                {type:"youtube", src:"https://www.youtube.com/watch?v=oc0IxjpXRCE"},
+                {type:"image", src:"assets/work/halara/halara.png"}
+            ]
         }
     },
     {
@@ -372,7 +380,13 @@ const workExperience = [
                 { label: "Team Size", value: "10" }
             ],
 
-            gallery: []
+            links: [
+                {icon:"link", label:"Sulakshana Monga Website", url:"https://sulakshanamonga.com"},
+            ],
+
+            gallery: [
+                {type:"image", src:"https://sulakshanamonga.com/cdn/shop/products/2_ce6969ce-cd85-4d51-a7b7-bd9c54e4df88.jpg?v=1663138104&width=1200"},
+            ]
         }
     },
     {

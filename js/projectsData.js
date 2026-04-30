@@ -12,7 +12,7 @@ const projectsData = [
     slug: "metasoccer",
 
     card: {
-        coverImage: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        coverImage: "assets/projects/metasoccer/concept_1.jpg",
         fallbackIcon: "gamepad-2",
         badge: "Unity",
         badgeStyle: "bg-black/50 backdrop-blur text-cyan-400",
@@ -30,7 +30,7 @@ const projectsData = [
         title: "MetaSoccer",
         subtitle: "Interactive AI Soccer Sandbox",
         heroAction: { icon: "sparkles", label: "Explore Project", url: "#", style: "bg-cyan-600 hover:bg-cyan-700 text-white" },
-        bannerImage: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        bannerImage: "assets/projects/metasoccer/concept_1.jpg",
         bannerIcon: "gamepad",
 
         overview: [
@@ -62,20 +62,25 @@ const projectsData = [
             { label: "Recognition", value: "SFMOMA ArtCade Semi-finalist" },
             { label: "Platform", value: "Interactive Installation" },
             { label: "Genre", value: "Simulation / Sandbox" },
-            { label: "Role", value: "Solo Developer" }
+            { label: "Role", value: "Game Designer" }
         ],
 
         links: [
-            { icon: "external-link", label: "Project Link", url: "#" },
-            { icon: "image", label: "Gallery / Showcase", url: "#" }
+            { icon: "external-link", label: "SFMOMA Page", url: "https://www.sfmoma.org/exhibition/artcade/" },
+        ],
+        gallery: [
+            { src: "assets/projects/metasoccer/concept_1.jpg", alt: "MetaSoccer Concept 1" },
+            { src: "assets/projects/metasoccer/concept_2.jpg", alt: "MetaSoccer Concept 2" },
+            { src: "assets/projects/metasoccer/Untitled_Artwork_9.JPG", alt: "MetaSoccer Concept 3" },
         ]
+
     }
 },
 {
     slug: "bhashaxr",
 
     card: {
-        coverImage: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        coverImage: "assets/projects/bhashaxr/bhasha-xr.png",
         fallbackIcon: "languages",
         badge: "VR / XR",
         badgeStyle: "bg-black/50 backdrop-blur text-violet-400",
@@ -93,8 +98,9 @@ const projectsData = [
         title: "BhashaXR",
         subtitle: "Immersive VR Language Learning Platform",
         heroAction: { icon: "sparkles", label: "Explore Project", url: "#", style: "bg-violet-600 hover:bg-violet-700 text-white" },
-        bannerImage: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        // bannerImage: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
         bannerIcon: "languages",
+        youtubeUrl:"https://youtube.com/shorts/fSWe7liTKV8",
 
         overview: [
             "Winner of Best UI/UX and Best in Education at Yantra '24,",
@@ -137,9 +143,10 @@ const projectsData = [
             { label: "Role", value: "Unity XR Developer" }
         ],
 
-        links: [
-            { icon: "external-link", label: "Project Link", url: "#" },
-            { icon: "image", label: "Gallery / Showcase", url: "#" }
+        gallery: [
+            { type: "youtube", url: "https://youtube.com/shorts/fSWe7liTKV8" },
+            { type: "youtube", url: "https://youtube.com/shorts/qO1CZKgwxew" },
+            {type:"image", src:"assets/projects/bhashaxr/bhasha-xr.png"},
         ]
     }
 },
@@ -148,7 +155,7 @@ const projectsData = [
     slug: "3ducation",
 
     card: {
-        coverImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        coverImage: "assets/projects/3ducation/tech.png",
         fallbackIcon: "box",
         badge: "VR / XR",
         badgeStyle: "bg-black/50 backdrop-blur text-emerald-400",
@@ -166,8 +173,9 @@ const projectsData = [
         title: "Drone Assembly - 3Ducation",
         subtitle: "VR Drone Assembly Learning Platform",
         heroAction: { icon: "sparkles", label: "Explore Project", url: "#", style: "bg-emerald-600 hover:bg-emerald-700 text-white" },
-        bannerImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        // bannerImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
         bannerIcon: "box",
+        youtubeUrl: "https://youtu.be/j-I2bN3C9w4",
 
         overview: [
             "3Ducation is a virtual reality learning platform specifically designed to teach users how to assemble drones through immersive, hands-on interaction.",
@@ -206,9 +214,10 @@ const projectsData = [
             { label: "Role", value: "Unity Developer" }
         ],
 
-        links: [
-            { icon: "external-link", label: "Project Link", url: "#" },
-            { icon: "image", label: "Gallery / Showcase", url: "#" }
+        gallery: [
+            {type:"youtube", src:"https://youtu.be/j-I2bN3C9w4"},
+            {type:"image", src: "assets/projects/3ducation/tech.png", alt: "3Ducation Tech" },
+            {type:"image", src: "assets/projects/3ducation/drone.png", alt: "3Ducation Assembly" }
         ]
     }
 },
@@ -289,7 +298,7 @@ const projectsData = [
     slug: "clink",
 
     card: {
-        coverImage: "https://images.unsplash.com/photo-1618331835717-801e976710b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        coverImage: "assets/projects/clink/cover.png",
         fallbackIcon: "link",
         badge: "Game Jam",
         badgeStyle: "bg-black/50 backdrop-blur text-yellow-400",
@@ -627,108 +636,6 @@ const projectsData = [
         ]
     }
 },
-    {
-        slug: "ai-behavior",
-
-        card: {
-            heroType: "model-viewer",
-            modelSrc: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
-            modelAlt: "Robot",
-            modelAnimation: "Idle",
-            fallbackIcon: "cpu",
-            title: "AI Behavior Suite",
-            description: "Modular AI system for Unity. Includes behavior trees, pathfinding, and sensory systems for NPCs.",
-            actions: [
-                { label: "GitHub", style: "text-xs bg-slate-700 text-slate-300 px-3 py-1 rounded-full border border-slate-600" },
-                { label: "C#", style: "text-xs border border-slate-700 px-2 py-1 rounded text-slate-500" }
-            ]
-        },
-
-        page: {
-            heroIcon: "brain-circuit",
-            heroIconColor: "text-purple-500",
-            title: "AI Behavior Library",
-            subtitle: "Modular Utility AI System",
-            heroAction: { icon: "github", label: "View Source", url: "#", style: "bg-slate-700 hover:bg-slate-600 text-white border border-slate-500" },
-            bannerIcon: "git-branch",
-
-            overview: [
-                "A decoupled, reusable Utility AI library designed for Unity, allowing for the creation of complex NPC behaviors without spaghetti code. Unlike standard Finite State Machines (FSMs), this system evaluates multiple considerations to score and select the best action dynamically.",
-                "Best suited for simulation games or RPGs where NPCs need to weigh their needs (hunger, safety, social) against environmental factors."
-            ],
-
-            features: [
-                {
-                    title: "Visual Debugger",
-                    description: "Includes a custom Unity Editor window to visualize the decision-making process in real-time, showing which considerations are driving the current behavior."
-                },
-                {
-                    title: "Curve-Based Scoring",
-                    description: "Designers can use Animation Curves to define how a raw value (e.g., 'Health') maps to a utility score, enabling non-linear decision logic."
-                }
-            ],
-
-            techStack: ["Unity", "C#", "ScriptableObjects"],
-
-            statsTitle: "Stats",
-            statsBoxStyle: "bg-gradient-to-br from-purple-900/20 to-pink-900/20 border-purple-500/20",
-            stats: [
-                { label: "Duration", value: "2 Months" },
-                { label: "Type", value: "Open Source Tool" }
-            ],
-
-            links: []
-        }
-    },
-
-    {
-        slug: "dungeon-gen",
-
-        card: {
-            fallbackIcon: "layers",
-            title: "Procedural Dungeon Gen",
-            description: "Algorithm for generating infinite dungeon layouts with room templates and corridor logic.",
-            actions: [
-                { label: "Read Paper", style: "text-xs bg-slate-700 text-slate-300 px-3 py-1 rounded-full border border-slate-600" }
-            ]
-        },
-
-        page: {
-            heroIcon: "grid",
-            heroIconColor: "text-pink-500",
-            title: "3D Dungeon Generator",
-            subtitle: "Wave Function Collapse",
-            heroAction: { icon: "eye", label: "View Results", url: "#", style: "bg-gray-800 hover:bg-gray-700 text-white border border-gray-600" },
-            bannerIcon: "box",
-
-            overview: [
-                "A 3D implementation of the Wave Function Collapse (WFC) algorithm, used to generate coherent dungeon layouts from a set of modular prefabs.",
-                "The algorithm operates by superimposing all possible states for each grid cell and iteratively collapsing them based on adjacency rules (constraints) until a single stable state remains. This ensures that corridors always connect to corridors, and doors never open into solid walls."
-            ],
-
-            features: [
-                {
-                    title: "Backtracking Support",
-                    description: "Implemented a backtracking mechanism to resolve contradictions during the collapse process, ensuring 100% completion rate for generated levels."
-                },
-                {
-                    title: "Constraint Editor",
-                    description: "A user-friendly editor interface to define adjacency rules between different tile types (e.g., Corner, Hallway, T-Junction)."
-                }
-            ],
-
-            techStack: ["C#", "Unity", "Algorithmic"],
-
-            statsTitle: "Stats",
-            statsBoxStyle: "bg-gradient-to-br from-pink-900/20 to-red-900/20 border-pink-500/20",
-            stats: [
-                { label: "Duration", value: "1 Month" },
-                { label: "Type", value: "Algorithm Demo" }
-            ],
-
-            links: []
-        }
-    }
 ];
 
 // --- Card Template (uses project.card.*) ---
