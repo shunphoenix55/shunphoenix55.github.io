@@ -315,8 +315,8 @@ const projectsData = [
         heroIconColor: "text-yellow-500",
         title: "Clink!",
         subtitle: "Chain-Based Puzzle Platformer",
-        heroAction: { icon: "play", label: "Play Now", url: "#", style: "bg-yellow-600 hover:bg-yellow-700 text-white" },
-        bannerImage: "https://images.unsplash.com/photo-1618331835717-801e976710b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        heroAction: { icon: "play", label: "Play Now", url: "https://dasaniket15.itch.io/clink", style: "bg-yellow-600 hover:bg-yellow-700 text-white" },
+        bannerImage: "assets/projects/clink/cover.png",
         bannerIcon: "link",
 
         overview: [
@@ -361,8 +361,8 @@ const projectsData = [
         ],
 
         links: [
-            { icon: "external-link", label: "Itch.io Page", url: "#" },
-            { icon: "download", label: "Download Build", url: "#" }
+            { icon: "external-link", label: "Itch.io Page", url: "https://dasaniket15.itch.io/clink" },
+            { icon: "download", label: "Download Build", url: "https://dasaniket15.itch.io/clink" }
         ]
     }
 },

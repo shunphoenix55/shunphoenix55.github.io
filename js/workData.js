@@ -78,7 +78,7 @@ const workExperience = [
         slug: "vr-dnd",
 
         card: {
-            coverImage: "https://t4.ftcdn.net/jpg/06/33/56/55/360_F_633565587_BmoYccbwbhjZcRKL9kWSwKU0WiSgeIhP.jpg",
+            coverImage: "assets/work/vr-dnd/dnd.png",
             fallbackIcon: "gamepad-2",
             duration: "Feb 2025 - May 2025",
             durationStyle: "bg-slate-700/50 text-slate-300",
@@ -95,7 +95,7 @@ const workExperience = [
             badgeStyle: "bg-purple-900/30 border-purple-500/30 text-purple-400",
             title: "Dungeons and Dragons VR",
             company: "Gameplay Programmer - Anomaly Labs",
-            bannerImage: "https://t4.ftcdn.net/jpg/06/33/56/55/360_F_633565587_BmoYccbwbhjZcRKL9kWSwKU0WiSgeIhP.jpg",
+            youtubeUrl:"https://youtu.be/fYB5CHUX8PE",
 
             overview: ["A narrative driven RPG based on Dungeons and Dragons. Experience a unique system of turn-based VR combat. The story changes depending on your choices. Perform various skill checks using VR dice."
             ],
@@ -103,7 +103,7 @@ const workExperience = [
             contributions: [
                 {
                     title: "DnD Character System",
-
+                    description: "Made a DnD-based character system with characteristics that reflect in both narrative and combat aspects of gameplay"
                 },
                 {
                     title: "Dialogue System",
@@ -126,7 +126,12 @@ const workExperience = [
             ],
 
             gallery: [
-                { type: "placeholder", label: "Gameplay Clip 1" }
+                { type: "youtube", url: "https://youtu.be/fYB5CHUX8PE" },
+                { type: "youtube", url: "https://youtube.com/shorts/wMq1UDn6oGE" },
+                { type: "youtube", url: "https://youtu.be/9CTF0xSMBLk" },
+                { type: "youtube", url: "https://youtube.com/shorts/_Yhb8w3dBa4" },
+                { type: "youtube", url: "https://youtu.be/4NQ7dGo1asg" },
+                { type: "youtube", url: "https://youtube.com/shorts/0TB35FSHIKw" },
             ]
         }
     },
