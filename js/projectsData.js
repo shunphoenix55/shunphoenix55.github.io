@@ -235,8 +235,8 @@ const projectsData = [
         title: "Bubbleoidvania",
         subtitle: "2D Platformer with Dynamic Bubble Mechanics",
         heroAction: { icon: "play", label: "Play Now", url: "https://play.unity.com/en/games/ff55b6c0-5ecb-4660-828c-7fc7eee4d6ec/bubbleoidvania", style: "bg-pink-600 hover:bg-pink-700 text-white" },
-        bannerImage: "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
         bannerIcon: "gamepad",
+        youtubeUrl:"https://youtu.be/Xlnstn9KtwA",
 
         overview: [
             "Bubbleoidvania is a 2D platformer developed during Global Game Jam 2025 at the Bangalore Keywords Studios site, built around the theme 'Bubble'.",
@@ -278,6 +278,9 @@ const projectsData = [
         links: [
             { icon: "play", label: "Play Online", url: "https://play.unity.com/en/games/ff55b6c0-5ecb-4660-828c-7fc7eee4d6ec/bubbleoidvania" },
             { icon: "github", label: "GitHub Repository", url: "https://github.com/devslayer8/GGJ_2025" }
+        ],
+        gallery:[
+            {type: "youtube", url: "https://youtu.be/Xlnstn9KtwA"}
         ]
     }
 },

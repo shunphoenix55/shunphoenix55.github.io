@@ -153,7 +153,7 @@ const workExperience = [
             badgeStyle: "bg-pink-900/30 border-pink-500/30 text-pink-400",
             title: "White Rabbit",
             company: "C++ Programmer - Dissent Studio",
-            bannerImage: "assets/covers/white-rabbit.jpg",
+            youtubeUrl: "https://youtu.be/VSHobwz8XnI",
 
             overview: ["White Rabbit unfolds within the abandoned remnants of an amusement theme park, concealing a clandestine research facility. This once-thriving park, now overgrown with nature, serves as the backdrop for a narrative of intrigue and exploration."
             ],
@@ -186,7 +186,10 @@ const workExperience = [
                 { label: "Team Size", value: "15" }
             ],
 
-            gallery: []
+            gallery: [
+                {type: "youtube",src: "https://youtu.be/VSHobwz8XnI",label: "Trailer"},
+                {type:"youtube",src:"https://youtu.be/NPAXa3fWdjA",label:"Gameplay Video"}
+            ],
         }
     },
 
