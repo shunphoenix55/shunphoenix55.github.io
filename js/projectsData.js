@@ -506,7 +506,7 @@ const projectsData = [
     slug: "groupiee",
 
     card: {
-        coverImage: "https://images.unsplash.com/photo-1526779259212-756e4f5f9d95?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        coverImage: "assets/projects/groupiee/groupiee.png",
         fallbackIcon: "users",
         badge: "Web App",
         badgeStyle: "bg-black/50 backdrop-blur text-blue-400",
@@ -524,7 +524,7 @@ const projectsData = [
         title: "Groupiee",
         subtitle: "Social Travel Matching Platform",
         heroAction: { icon: "github", label: "View Code", url: "#", style: "bg-blue-600 hover:bg-blue-700 text-white" },
-        bannerImage: "https://images.unsplash.com/photo-1526779259212-756e4f5f9d95?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        bannerImage: "assets/projects/groupiee/groupiee.png",
         bannerIcon: "users",
 
         overview: [
@@ -573,7 +573,7 @@ const projectsData = [
     slug: "fruit-ninja-clone",
 
     card: {
-        coverImage: "https://images.unsplash.com/photo-1574226516831-e1dff420e37f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        coverImage: "assets/projects/fruit-ninja/fruit.png",
         fallbackIcon: "slice",
         badge: "Game Dev",
         badgeStyle: "bg-black/50 backdrop-blur text-red-400",
@@ -591,7 +591,7 @@ const projectsData = [
         title: "Fruit Ninja Clone",
         subtitle: "Game Systems Recreation in Unity",
         heroAction: { icon: "github", label: "View Code", url: "#", style: "bg-red-600 hover:bg-red-700 text-white" },
-        bannerImage: "https://images.unsplash.com/photo-1574226516831-e1dff420e37f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        bannerImage: "assets/projects/fruit-ninja/fruit.png",
         bannerIcon: "slice",
 
         overview: [
