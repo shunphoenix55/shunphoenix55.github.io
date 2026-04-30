@@ -16,7 +16,7 @@ const workExperience = [
             fallbackIcon: "briefcase",
             duration: "Feb 2025 - Present",
             durationStyle: "bg-cyan-900/50 text-cyan-300",
-            title: "PvP Arena Shooter VR",
+            title: "Doom Town",
             company: "Gameplay Programmer - Anomaly Labs",
             description: "Battle it out with your friends in a multiplayer shooter in VR! Set in a futuristic sci-fi world, you gather powerups and use them strategically to gain the upper hand in matches!",
             tech: ["Unity", "Photon Fusion", "Meta XR SDK"]
@@ -27,7 +27,7 @@ const workExperience = [
             heroIconColor: "text-cyan-500",
             duration: "Feb 2025 - Present",
             badgeStyle: "bg-cyan-900/30 border-cyan-500/30 text-cyan-400",
-            title: "PvP Arena Shooter VR",
+            title: "Doom Town",
             company: "Gameplay Programmer - Anomaly Labs",
             bannerImage: "assets/covers/doom-town.png",
 
@@ -136,7 +136,7 @@ const workExperience = [
         slug: "white-rabbit",
 
         card: {
-            coverImage: "assets/covers/white-rabbit.jpg",
+            coverImage: "assets/work/white-rabbit/white-rabbit.jpg",
             fallbackIcon: "code-2",
             duration: "November 2023 - June 2024",
             durationStyle: "bg-slate-700/50 text-slate-300",
@@ -188,7 +188,9 @@ const workExperience = [
 
             gallery: [
                 {type: "youtube",src: "https://youtu.be/VSHobwz8XnI",label: "Trailer"},
-                {type:"youtube",src:"https://youtu.be/NPAXa3fWdjA",label:"Gameplay Video"}
+                {type:"youtube",src:"https://youtu.be/NPAXa3fWdjA",label:"Gameplay Video"},
+                {type:"image", src:"assets/work/white-rabbit/white-rabbit-screenshot-3.png", label:"Gameplay Screenshot"},
+                {type:"image", src:"assets/work/white-rabbit/white-rabbit-screenshot-2.png", label:"Gameplay Screenshot"},
             ],
 
             links: [
@@ -201,7 +203,7 @@ const workExperience = [
         slug: "iva-plus",
 
         card: {
-            coverImage: "assets/covers/iva-plus.png",
+            coverImage: "assets/work/iva-plus/iva-plus.png",
             fallbackIcon: "code-2",
             duration: "August 2023 - December 2023 (Internship)",
             durationStyle: "bg-slate-700/50 text-slate-300",
@@ -218,7 +220,8 @@ const workExperience = [
             badgeStyle: "bg-pink-900/30 border-pink-500/30 text-pink-400",
             title: "Intelligent Vision Analyzer Plus",
             company: "C# Programmer - Alfaleus Technology",
-            bannerImage: "assets/covers/iva-plus.png",
+            // bannerImage: "assets/covers/iva-plus.png",
+            youtubeUrl:"https://www.youtube.com/watch?v=MPbURIU4H8k",
 
             overview: ["iVA+ is a VR application that is used to perform eye testing. It is primarily used to detect glaucoma, beating out the Goldmann machine in terms of accuracy and price.",
                 "It also features tests for visual acuity, contrast and colorblindness"
@@ -257,7 +260,13 @@ const workExperience = [
                 { label: "Team Size", value: "6" }
             ],
 
-            gallery: []
+            gallery: [
+                {type:"youtube", src:"https://www.youtube.com/watch?v=MPbURIU4H8k"},
+                {type:"image", src:"assets/work/iva-plus/iva-plus.png"},
+            ],
+            links:[
+                {icon:"play", label:"Alfaleus Website", url:"https://alfaleus.in"},
+            ]
         }
     },
     {
