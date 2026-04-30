@@ -29,8 +29,7 @@ const workExperience = [
             badgeStyle: "bg-cyan-900/30 border-cyan-500/30 text-cyan-400",
             title: "Doom Town",
             company: "Gameplay Programmer - Anomaly Labs",
-            bannerImage: "assets/covers/doom-town.png",
-
+            youtubeUrl:"https://youtu.be/PxBUL5u0uGA",
             overview: [
                 "Battle it out with your friends in a multiplayer shooter in VR! Set in a futuristic sci-fi world, you gather powerups and use them strategically to gain the upper hand in matches!"
             ],
@@ -69,8 +68,8 @@ const workExperience = [
             ],
 
             gallery: [
-                { type: "placeholder", label: "Screenshot 1" },
-                { type: "placeholder", label: "Screenshot 2" }
+                { type: "youtube", label: "YouTube Video", url: "https://youtu.be/PxBUL5u0uGA" },
+                { type: "youtube", label: "YouTube Video 2", url: "https://youtu.be/4Fn5gI0Zmj4" }
             ]
         }
     },
@@ -393,7 +392,7 @@ const workExperience = [
         slug: "ation-studios",
 
         card: {
-            coverImage: "assets/covers/immersive-tech.png",
+            coverImage: "assets/work/ation-studios/ation.png",
             fallbackIcon: "code-2",
             duration: "February 2022 - May 2022 (Internship)",
             durationStyle: "bg-slate-700/50 text-slate-300",
@@ -410,7 +409,7 @@ const workExperience = [
             badgeStyle: "bg-pink-900/30 border-pink-500/30 text-pink-400",
             title: "Ation Studios",
             company: "Blender Animator",
-            bannerImage: "assets/covers/immersive-tech.png",
+            youtubeUrl:"https://youtu.be/X-qWpWhGsH8",
 
             overview: ["Ation Studios is a creative agency that specializes in 3D modeling and animation. It is designed to help clients visualize their ideas in a dynamic and engaging way.",
             ],
@@ -436,7 +435,10 @@ const workExperience = [
                 { label: "Team Size", value: "6" }
             ],
 
-            gallery: []
+            gallery: [
+                { type: "youtube", label: "YouTube Video", url: "https://youtu.be/X-qWpWhGsH8" },
+                {type:"image", src:"assets/work/ation-studios/ation.png"}
+            ]
         }
     },
 ];

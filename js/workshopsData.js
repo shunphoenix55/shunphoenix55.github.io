@@ -84,6 +84,7 @@ const workshopsData = [
         title: "Beyond Reality: Exploring the World of XR",
         subtitle: "Webinar",
         bannerIcon: "globe",
+        youtubeUrl: "https://www.youtube.com/watch?v=66vHCPDkxh0",
 
         overview: [
             "Conducted an introductory webinar focused on Extended Reality (XR), covering the fundamentals of Augmented Reality (AR), Virtual Reality (VR), and Mixed Reality (MR).",
@@ -139,6 +140,7 @@ const workshopsData = [
         title: "Introduction to 3D Modelling using Blender",
         subtitle: "Workshop",
         bannerIcon: "video",
+        youtubeUrl: "https://www.youtube.com/live/ECxKsiI0mWc",
 
         overview: [
             "Designed and delivered a structured video workshop series introducing beginners to 3D modelling for games using Blender.",
@@ -194,6 +196,7 @@ const workshopsData = [
         title: "Going Mobile: Creating Fruit Ninja in Unity",
         subtitle: "Workshop",
         bannerIcon: "gamepad-2",
+        youtubeUrl: "https://www.youtube.com/live/Ad7H5l7yu38",
 
         overview: [
             "Delivered a hands-on workshop focused on mobile game development using Unity, centered around recreating the core mechanics of a Fruit Ninja-style game.",
