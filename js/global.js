@@ -109,6 +109,113 @@ document.addEventListener("DOMContentLoaded", () => {
     reveal();
 });
 
+// --- Shared Detail Media Helpers ---
+function resolveMediaSrc(src) {
+    if (!src || typeof src !== "string") return "";
+    if (/^(https?:|data:|blob:|\/|#)/i.test(src) || src.startsWith("../")) return src;
+    return window.location.pathname.includes("/detail.html") ? `../${src}` : src;
+}
+
+function getYouTubeEmbedUrl(item) {
+    if (item.youtubeId) return `https://www.youtube.com/embed/${item.youtubeId}`;
+
+    const url = item.src || item.url || "";
+    const patterns = [
+        /youtu\.be\/([^?&#/]+)/,
+        /youtube\.com\/watch\?v=([^?&#/]+)/,
+        /youtube\.com\/embed\/([^?&#/]+)/,
+        /youtube\.com\/shorts\/([^?&#/]+)/
+    ];
+
+    const match = patterns.map(pattern => url.match(pattern)).find(Boolean);
+    return match ? `https://www.youtube.com/embed/${match[1]}` : resolveMediaSrc(url);
+}
+
+function renderMediaItem(item, options = {}) {
+    const media = typeof item === "string" ? { type: "image", src: item } : (item || {});
+    const type = media.type || (media.youtubeId ? "youtube" : "image");
+    const rounded = options.rounded || "rounded-lg";
+    const border = options.border || "border border-slate-700";
+    const containerClass = `aspect-video bg-slate-800 ${rounded} overflow-hidden ${border}`;
+    const title = media.title || media.label || media.alt || "Portfolio media";
+
+    if (type === "image" && media.src) {
+        return `
+            <div class="${containerClass}">
+                <img src="${resolveMediaSrc(media.src)}" alt="${media.alt || title}"
+                     class="w-full h-full object-cover" loading="lazy">
+            </div>`;
+    }
+
+    if (type === "video" && media.src) {
+        return `
+            <div class="${containerClass}">
+                <video src="${resolveMediaSrc(media.src)}" controls playsinline preload="metadata"
+                       ${media.poster ? `poster="${resolveMediaSrc(media.poster)}"` : ""}
+                       class="w-full h-full object-cover"></video>
+            </div>`;
+    }
+
+    if ((type === "youtube" || type === "embed") && (media.src || media.url || media.youtubeId)) {
+        return `
+            <div class="${containerClass}">
+                <iframe src="${getYouTubeEmbedUrl(media)}" title="${title}"
+                        class="w-full h-full"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+            </div>`;
+    }
+
+    return `
+        <div class="${containerClass} flex items-center justify-center">
+            <span class="text-slate-500 text-sm flex flex-col items-center gap-2 text-center px-4">
+                <i data-lucide="${media.icon || 'image'}" class="w-8 h-8"></i> ${media.label || "Media coming soon"}
+            </span>
+        </div>`;
+}
+
+function getPageBannerMedia(pg) {
+    if (pg.bannerMedia) return pg.bannerMedia;
+    if (pg.bannerImage) return { type: "image", src: pg.bannerImage, alt: pg.title };
+    if (pg.bannerVideo) return { type: "video", src: pg.bannerVideo, poster: pg.bannerPoster, title: pg.title };
+    if (pg.youtubeUrl) return { type: "youtube", src: pg.youtubeUrl, title: pg.title };
+    if (pg.youtubeId) return { type: "youtube", youtubeId: pg.youtubeId, title: pg.title };
+    return null;
+}
+
+function renderBannerMedia(pg) {
+    const media = getPageBannerMedia(pg);
+    if (media) {
+        return renderMediaItem(media, {
+            rounded: "rounded-2xl",
+            border: "border border-slate-700 shadow-2xl"
+        });
+    }
+
+    return `
+        <div class="aspect-video bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex items-center justify-center">
+            <i data-lucide="${pg.bannerIcon || pg.heroIcon || 'image'}" class="w-32 h-32 text-slate-600"></i>
+        </div>`;
+}
+
+function renderGallerySection(pg, heading = "Gallery") {
+    if (!pg.gallery || pg.gallery.length === 0) return "";
+
+    const galleryItems = pg.gallery.map(item => renderMediaItem(item)).join("");
+
+    return `
+        <section>
+            <h3 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
+                <i data-lucide="image" class="w-6 h-6 text-purple-500"></i> ${heading}
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                ${galleryItems}
+            </div>
+        </section>
+    `;
+}
+
 // --- Slug-Based Work Detail Renderer ---
 function renderWorkDetail() {
     const root = document.getElementById("work-detail-root");
@@ -148,7 +255,7 @@ function renderWorkDetail() {
             <i data-lucide="check-circle-2" class="w-6 h-6 text-green-500 flex-shrink-0 mt-1"></i>
             <div>
                 <h4 class="font-bold text-white">${c.title}</h4>
-                <p class="text-slate-400 text-sm mt-1">${c.description}</p>
+                ${c.description ? `<p class="text-slate-400 text-sm mt-1">${c.description}</p>` : ""}
             </div>
         </li>
     `).join("");
@@ -166,43 +273,8 @@ function renderWorkDetail() {
         </li>
     `).join("");
 
-    // --- Build gallery ---
-    let gallerySection = "";
-    if (pg.gallery && pg.gallery.length > 0) {
-        const galleryItems = pg.gallery.map(item => {
-            if (item.type === "image") {
-                return `
-                    <div class="aspect-video bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
-                        <img src="${item.src}" alt="${item.alt || ''}"
-                             class="w-full h-full object-cover" loading="lazy">
-                    </div>`;
-            } else if (item.type === "video") {
-                return `
-                    <div class="aspect-video bg-slate-800 rounded-lg overflow-hidden border border-slate-700">
-                        <video src="${item.src}" controls class="w-full h-full object-cover"></video>
-                    </div>`;
-            } else {
-                // placeholder
-                return `
-                    <div class="aspect-video bg-slate-800 rounded-lg flex items-center justify-center border border-slate-700">
-                        <span class="text-slate-500 text-sm flex flex-col items-center gap-2">
-                            <i data-lucide="image" class="w-8 h-8"></i> ${item.label || 'Screenshot'}
-                        </span>
-                    </div>`;
-            }
-        }).join("");
-
-        gallerySection = `
-            <section>
-                <h3 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
-                    <i data-lucide="image" class="w-6 h-6 text-purple-500"></i> Gallery
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    ${galleryItems}
-                </div>
-            </section>
-        `;
-    }
+    const gallerySection = renderGallerySection(pg);
+    const bannerSection = getPageBannerMedia(pg) ? renderBannerMedia(pg) : "";
 
     // --- Render full page ---
     root.innerHTML = `
@@ -210,7 +282,7 @@ function renderWorkDetail() {
         <header class="pt-32 pb-12 relative overflow-hidden">
             ${pg.heroImage
             ? `<div class="absolute inset-0">
-                       <img src="${pg.heroImage}" alt="${pg.title} hero"
+                       <img src="${resolveMediaSrc(pg.heroImage)}" alt="${pg.title} hero"
                             class="w-full h-full object-cover" loading="lazy">
                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900"></div>
                    </div>`
@@ -241,6 +313,8 @@ function renderWorkDetail() {
 
                 <!-- Main Details -->
                 <div class="lg:col-span-2 space-y-12">
+
+                    ${bannerSection}
 
                     <section>
                         <h3 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
@@ -351,12 +425,14 @@ function renderHackathonDetail() {
                 <i data-lucide="award" class="w-5 h-5"></i> ${pg.award}
             </span>
         </div>` : "";
+    const gallerySection = renderGallerySection(pg);
+    const bannerContent = renderBannerMedia(pg);
 
     root.innerHTML = `
         <header class="pt-32 pb-12 relative overflow-hidden">
             ${pg.heroImage
             ? `<div class="absolute inset-0">
-                       <img src="${pg.heroImage}" alt="${pg.title} hero" class="w-full h-full object-cover" loading="lazy">
+                       <img src="${resolveMediaSrc(pg.heroImage)}" alt="${pg.title} hero" class="w-full h-full object-cover" loading="lazy">
                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900"></div>
                    </div>`
             : `<div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
@@ -380,9 +456,7 @@ function renderHackathonDetail() {
         <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <div class="lg:col-span-2 space-y-12">
-                    <div class="aspect-video bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex items-center justify-center">
-                        <i data-lucide="${pg.bannerIcon}" class="w-32 h-32 text-slate-600"></i>
-                    </div>
+                    ${bannerContent}
                     <section>
                         <h3 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
                             <i data-lucide="info" class="w-6 h-6 text-cyan-500"></i> Project Overview
@@ -395,6 +469,7 @@ function renderHackathonDetail() {
                         </h3>
                         <ul class="space-y-4">${achieveHTML}</ul>
                     </section>
+                    ${gallerySection}
                 </div>
                 <aside class="space-y-8">
                     <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
@@ -475,15 +550,14 @@ function renderProjectDetail() {
             <i data-lucide="${pg.heroAction.icon}" class="w-5 h-5"></i> ${pg.heroAction.label}
         </a>` : "";
 
-    const bannerContent = pg.bannerImage
-        ? `<img src="${pg.bannerImage}" alt="${pg.title}" class="w-full h-full object-cover">`
-        : `<i data-lucide="${pg.bannerIcon}" class="w-32 h-32 text-slate-600"></i>`;
+    const bannerContent = renderBannerMedia(pg);
+    const gallerySection = renderGallerySection(pg);
 
     root.innerHTML = `
         <header class="pt-32 pb-12 relative overflow-hidden">
             ${pg.heroImage
             ? `<div class="absolute inset-0">
-                       <img src="${pg.heroImage}" alt="${pg.title} hero" class="w-full h-full object-cover" loading="lazy">
+                       <img src="${resolveMediaSrc(pg.heroImage)}" alt="${pg.title} hero" class="w-full h-full object-cover" loading="lazy">
                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900"></div>
                    </div>`
             : `<div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
@@ -507,9 +581,7 @@ function renderProjectDetail() {
         <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <div class="lg:col-span-2 space-y-12">
-                    <div class="aspect-video bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex items-center justify-center">
-                        ${bannerContent}
-                    </div>
+                    ${bannerContent}
                     <section>
                         <h3 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
                             <i data-lucide="info" class="w-6 h-6 text-cyan-500"></i> Project Description
@@ -522,6 +594,7 @@ function renderProjectDetail() {
                         </h3>
                         <ul class="space-y-4">${featuresHTML}</ul>
                     </section>
+                    ${gallerySection}
                 </div>
                 <aside class="space-y-8">
                     <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
@@ -592,12 +665,14 @@ function renderWorkshopDetail() {
                     </a>`).join("")}
             </div>
         </div>` : "";
+    const bannerContent = renderBannerMedia(pg);
+    const gallerySection = renderGallerySection(pg);
 
     root.innerHTML = `
         <header class="pt-32 pb-12 relative overflow-hidden">
             ${pg.heroImage
             ? `<div class="absolute inset-0">
-                       <img src="${pg.heroImage}" alt="${pg.title} hero" class="w-full h-full object-cover" loading="lazy">
+                       <img src="${resolveMediaSrc(pg.heroImage)}" alt="${pg.title} hero" class="w-full h-full object-cover" loading="lazy">
                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900"></div>
                    </div>`
             : `<div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
@@ -620,9 +695,7 @@ function renderWorkshopDetail() {
         <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <div class="lg:col-span-2 space-y-12">
-                    <div class="aspect-video bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex items-center justify-center">
-                        <i data-lucide="${pg.bannerIcon}" class="w-32 h-32 text-slate-600"></i>
-                    </div>
+                    ${bannerContent}
                     <section>
                         <h3 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
                             <i data-lucide="info" class="w-6 h-6 text-cyan-500"></i> Workshop Overview
@@ -635,6 +708,7 @@ function renderWorkshopDetail() {
                         </h3>
                         <ul class="space-y-4">${highlightsHTML}</ul>
                     </section>
+                    ${gallerySection}
                 </div>
                 <aside class="space-y-8">
                     <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
@@ -701,12 +775,14 @@ function renderOrgDetail() {
                     </a>`).join("")}
             </div>
         </div>` : "";
+    const bannerContent = renderBannerMedia(pg);
+    const gallerySection = renderGallerySection(pg);
 
     root.innerHTML = `
         <header class="pt-32 pb-12 relative overflow-hidden">
             ${pg.heroImage
             ? `<div class="absolute inset-0">
-                       <img src="${pg.heroImage}" alt="${pg.title} hero" class="w-full h-full object-cover" loading="lazy">
+                       <img src="${resolveMediaSrc(pg.heroImage)}" alt="${pg.title} hero" class="w-full h-full object-cover" loading="lazy">
                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900"></div>
                    </div>`
             : `<div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
@@ -729,9 +805,7 @@ function renderOrgDetail() {
         <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <div class="lg:col-span-2 space-y-12">
-                    <div class="aspect-video bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl flex items-center justify-center">
-                        <i data-lucide="${pg.bannerIcon}" class="w-32 h-32 text-slate-600"></i>
-                    </div>
+                    ${bannerContent}
                     <section>
                         <h3 class="text-2xl font-bold mb-4 text-white flex items-center gap-2">
                             <i data-lucide="info" class="w-6 h-6 text-cyan-500"></i> Role Description
@@ -744,6 +818,7 @@ function renderOrgDetail() {
                         </h3>
                         <ul class="space-y-4">${achieveHTML}</ul>
                     </section>
+                    ${gallerySection}
                 </div>
                 <aside class="space-y-8">
                     <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">

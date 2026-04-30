@@ -12,7 +12,7 @@ const workshopsData = [
     slug: "devsoc-23",
 
     card: {
-        coverImage: "assets/covers/devsoc.jpg",
+        coverImage: "",
         fallbackIcon: "trophy",
         iconBg: "bg-yellow-900/30",
         iconColor: "text-yellow-400",
@@ -68,7 +68,7 @@ const workshopsData = [
     slug: "beyond-reality-xr",
 
     card: {
-        coverImage: "assets/covers/beyond-reality.jpg",
+        coverImage: "",
         fallbackIcon: "video",
         iconBg: "bg-indigo-900/30",
         iconColor: "text-indigo-400",
@@ -123,7 +123,7 @@ const workshopsData = [
     slug: "blender-intro-workshop",
 
     card: {
-        coverImage: "assets/covers/blender-intro.jpg",
+        coverImage: "",
         fallbackIcon: "cube",
         iconBg: "bg-orange-900/30",
         iconColor: "text-orange-400",
@@ -178,7 +178,7 @@ const workshopsData = [
     slug: "fruit-ninja-unity-workshop",
 
     card: {
-        coverImage: "assets/covers/fruit-ninja-unity.jpg",
+        coverImage: "",
         fallbackIcon: "smartphone",
         iconBg: "bg-green-900/30",
         iconColor: "text-green-400",
