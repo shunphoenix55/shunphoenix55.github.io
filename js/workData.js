@@ -190,6 +190,10 @@ const workExperience = [
                 {type: "youtube",src: "https://youtu.be/VSHobwz8XnI",label: "Trailer"},
                 {type:"youtube",src:"https://youtu.be/NPAXa3fWdjA",label:"Gameplay Video"}
             ],
+
+            links: [
+            { icon: "play", label: "Studio Website", url: "https://www.dissentstudio.in" },
+            ],
         }
     },
 

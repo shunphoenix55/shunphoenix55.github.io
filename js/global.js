@@ -273,6 +273,17 @@ function renderWorkDetail() {
         </li>
     `).join("");
 
+    const linksHTML = pg.links && pg.links.length > 0 ? `
+        <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+            <h3 class="text-xl font-bold mb-4 text-white">Links</h3>
+            <div class="space-y-2">
+                ${pg.links.map(l => `
+                    <a href="${l.url}" class="flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="${l.icon}" class="w-4 h-4"></i> ${l.label}
+                    </a>`).join("")}
+            </div>
+        </div>` : "";
+
     const gallerySection = renderGallerySection(pg);
     const bannerSection = getPageBannerMedia(pg) ? renderBannerMedia(pg) : "";
 
@@ -354,6 +365,8 @@ function renderWorkDetail() {
                             ${statsHTML}
                         </ul>
                     </div>
+
+                    ${linksHTML}
 
                 </aside>
             </div>
